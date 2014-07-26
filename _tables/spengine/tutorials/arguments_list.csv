@@ -1,0 +1,8 @@
+属性名,值类型,说明
+name,字符串,列表的ID，整个屏幕有且只有一个该ID的UI组件。
+scroll_position,数字,滚动到该位置，为0 - 1之间的浮点数。
+scroll_position_delta,数字,滚动距离，为-1 - 1之间的浮点数。
+scroll_delta,数字,滚动距离，以像素为单位。
+max_item,数字,列表最大容量。
+direction,字符串,列表方向，可以是'Vertical'（垂直向下）或 'Horizontal'（水平向右）
+clear,布尔值,是否清除列表元素。

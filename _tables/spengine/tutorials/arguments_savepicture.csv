@@ -1,0 +1,4 @@
+属性名,值类型,说明
+component,字符串,需要截图的组件ID。
+file,字符串,目标图像文件名。
+picture,字符串,需要设置基图为截获图像的Picture的ID。

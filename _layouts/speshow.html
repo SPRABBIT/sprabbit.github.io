@@ -1,0 +1,25 @@
+---
+layout: bootstrap
+keywords: 同人游戏,同人社团,游戏引擎,Galgame,AVG,SpeShow,SPRABBIT,SPENGINE,galgame引擎
+description: 同人社团SPRABBIT-超科学兔耳中队是一个专注于技术创新的中文同人社团
+icon: favicon.png
+css:
+ - shCore.css
+ - shThemeDefault.css
+js:
+ - shCore.js
+ - shBrushXML.js
+ - shBrushJScript.js
+ - highlight.js
+---
+
+<div class="row">
+	<div class="col-md-3">
+		<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+			{% include speshow/left.html %}
+		</div>
+	</div>
+	<div class="col-md-9" role="main">
+		{{ content }}
+	</div>	
+</div>

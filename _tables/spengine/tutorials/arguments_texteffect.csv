@@ -1,0 +1,9 @@
+属性名,值类型,说明
+text_effect_back,字符串,文字背景特效，其取值跟 @effect 的 effect 属性一致。
+text_effect_back_tex,字符串,文字背景特效图片。
+text_effect_back_level,数字,文字背景特效等级。
+text_effect_back_XX,数字,其他以“XX”命名的文字背景特效参数。
+text_effect_front,字符串,文字前景特效，其取值跟 @effect 的 effect 属性一致。
+text_effect_front_tex,字符串,文字前景特效图片。
+text_effect_front_level,数字,文字前景特效等级。
+text_effect_front_XX,数字,其他以“XX”命名的文字前景特效参数。
