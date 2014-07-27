@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>分支 - KScript 教程</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="同人游戏,同人社团,游戏引擎,Galgame,AVG,SpeShow,SPRABBIT,SPENGINE,galgame引擎" />
+	<meta name="description" content="同人社团SPRABBIT-超科学兔耳中队是一个专注于技术创新的中文同人社团" />
+
+	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/shCore.css" type="text/css" />
+	<link rel="stylesheet" href="/css/shThemeDefault.css" type="text/css" />
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/">
+					<img src="/images/logo_speshow_long_xs.png">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/spengine/">简介</a>
+					</li>
+					<li><a href="/spengine/tutorial.html">文档</a>
+					</li>
+					<li><a href="/spengine/authors.html">关于</a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+	<div class="col-md-3">
+		<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+			<ul class="nav sidebar">
+	<li><a href="index.html">SpeShow 简介</a>
+	</li>
+	<li><a href="spengine.html">SPENGINE 简介</a>
+	</li>
+	<li><a href="why_speshow.html">为什么使用 SpeShow </a>
+	</li>
+	<li><a href="license.html">使用许可</a>
+	</li>
+	<li><a href="authors.html">作者 &amp; 招募</a>
+	</li>
+	<li>
+		<a href="download.html">下载</a>
+		<ul class="nav">
+			<li><a href="download.html">SpeShow</a>
+			</li>
+			<li><a href="editor.html">KScript Editor</a>
+			</li>
+			<li><a href="pack_guider.html">SSPackGuider</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="tutorial.html">教程</a>
+		<ul class="nav">
+			<li><a href="tutorial_deploy.html">部署 SpeShow</a>
+			</li>
+			<li>
+				<a href="tutorial_kscript.html">KScript</a>
+				<ul class="nav">
+					<li><a href="#tutorial_kscript_comment">注释</a>
+					</li>
+					<li><a href="#tutorial_kscript_variable">变量</a>
+					</li>
+					<li><a href="#tutorial_kscript_operation">运算</a>
+					</li>
+					<li><a href="#tutorial_kscript_function">函数</a>
+					</li>
+					<li><a href="#tutorial_kscript_branch">分支</a>
+					</li>
+					<li><a href="#tutorial_kscript_loop">循环</a>
+					</li>
+					<li><a href="#tutorial_kscript_include">include 函数</a>
+					</li>
+					<li><a href="#tutorial_kscript_speshow">KScript 与 SpeShow</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_standard.html">基本指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_standard_screen.html">屏幕</a>
+					</li>
+					<li><a href="tutorial_standard_component.html">基本UI组件</a>
+					</li>
+					<li><a href="tutorial_standard_textbox.html">文字框</a>
+					</li>
+					<li><a href="tutorial_standard_picturebox.html">图片框</a>
+					</li>
+					<li><a href="tutorial_standard_list.html">列表</a>
+					</li>
+					<li><a href="tutorial_standard_wait.html">等待</a>
+					</li>
+					<li><a href="tutorial_standard_exit.html">退出</a>
+					</li>
+					<li><a href="tutorial_standard_sample.html">示例</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_advanced.html">进阶指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_advanced_switch.html">切换</a>
+					</li>
+					<li><a href="tutorial_advanced_sound.html">声音</a>
+					</li>
+					<li><a href="tutorial_advanced_video.html">视频</a>
+					</li>
+					<li><a href="tutorial_advanced_effect.html">特效</a>
+					</li>
+					<li><a href="tutorial_advanced_animation.html">动画</a>
+					</li>
+					<li><a href="tutorial_advanced_particlesystem.html">粒子系统</a>
+					</li>
+					<li><a href="tutorial_advanced_capture.html">截图</a>
+					</li>
+					<li><a href="tutorial_advanced_save.html">存档</a>
+					</li>
+					<li><a href="tutorial_advanced_skip.html">跳过</a>
+					</li>
+					<li><a href="tutorial_advanced_texteffect.html">文字特效</a>
+					</li>
+					<li><a href="tutorial_advanced_dialogbox.html">AVG专用组件：对话框</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_senior.html">高级指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_senior_pre.html">预执行脚本</a>
+					</li>
+					<li><a href="tutorial_senior_inner.html">内部脚本</a>
+					</li>
+					<li><a href="tutorial_senior_listener.html">事件响应脚本</a>
+					</li>
+					<li><a href="tutorial_senior_jump.html">跳转脚本</a>
+					</li>
+				</ul>
+			</li>
+			<li><a href="tutorial_professional.html">高级用途</a>
+			</li>
+			<li><a href="tutorial_commands.html">指令索引</a>
+			</li>
+			<li><a href="tutorial_sample.html">示例</a>
+			</li>
+		</ul>
+	</li>
+	<li> <a href="show.html">演示</a>
+	</li>
+	<li> <a href="donate.html">捐赠</a>
+	</li>
+	<li> <a href="QA.html">FAQ</a>
+	</li>
+</ul>
+
+		</div>
+	</div>
+	<div class="col-md-9" role="main">
+		<h2>分支</h2>
+
+<p>分支即是使程序根据实际情况，执行脚本中的不同部分。</p>
+
+<p>在KScript中可以使用“if/else”语句，或“switch”语句实现。</p>
+
+<h3>if 分支</h3>
+
+<p>“if/else”语句的语法格式为：</p>
+
+<pre class="brush: ks">
+// 单执行语句表达式（语句需以英文分号“;”结束）
+if(条件表达式) 语句1
+else 语句2
+
+// 多执行语句表达式
+if(条件表达式)
+{
+    // 这里可以包含多条语句
+}
+else
+{
+    // 这里可以包含多条语句
+}
+
+// if else 嵌套
+if(条件表达式)
+{
+    // 这里可以包含多条语句
+}
+else if(另一个条件表达式)
+{
+    // 这里可以包含多条语句
+}
+</pre>
+
+<p>其中所有else及其后部分均可省略。当且仅当“if”后面的条件表达式为“true”（布尔型）或不等于0（整型或浮点数）时，执行跟在“if”后面的语句，否则执行“else”后面的语句（仅当“else”及其后语句存在时）。</p>
+
+<h3>switch 分支</h3>
+
+<p>“switch”分支的语法为：</p>
+
+<pre class="brush: ks">
+// 完整switch命令（语句可以为语句块）
+switch(表达式)
+{
+    case 值1: 语句1
+    case 值2: 语句2
+    case 值3: 语句3
+    ...
+    default: 语句N
+}
+</pre>
+
+<p>“switch”语句会将其后的表达式与所有 case 的值进行比较，如果表达式的值等于 case 的值，则执行该 case 后面的语句。若无一 case 匹配，则执行 default 后的语句。当然，与 if 分支一样，<em>语句可以是语句块，即由花括号“{}”括起来的多个语句</em>。这里有一点与 C/C++ 不同的是，不需要使用 break 进行中断，匹配后仅执行紧跟相应 case 的语句，不会调用到其他 case 或 default 中的语句。</p>
+
+<hr>
+
+<p><a href="tutorial_kscript_function.html">上一节：函数</a></p>
+
+<p><a href="tutorial_kscript_loop.html">下一节：循环</a></p>
+
+	</div>	
+</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div role="contentinfo" class="footer">
+		<div class="container">
+			<p>
+				
+			</p>
+		</div>
+	</div>
+</body>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="/js/shCore.js"></script>
+
+<script type="text/javascript" src="/js/shBrushXML.js"></script>
+
+<script type="text/javascript" src="/js/shBrushKScript.js"></script>
+
+<script type="text/javascript" src="/js/highlight.js"></script>
+
+<script type="text/javascript" src="/js/baidu_tongji.js"></script>
+
+</html>

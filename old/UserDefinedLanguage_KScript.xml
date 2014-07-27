@@ -1,0 +1,36 @@
+<NotepadPlus>
+    <UserLang name="KScript" ext="ks sps s ">
+        <Settings>
+            <Global caseIgnored="no" />
+            <TreatAsSymbol comment="yes" commentLine="yes" />
+            <Prefix words1="no" words2="no" words3="yes" words4="yes" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Delimiters">&quot;&apos;0&quot;&apos;0</Keywords>
+            <Keywords name="Folder+"></Keywords>
+            <Keywords name="Folder-"></Keywords>
+            <Keywords name="Operators">( ) * , : ; ? ^ { | } + &lt; = &gt;</Keywords>
+            <Keywords name="Comment">1/* 2*/ 0//</Keywords>
+            <Keywords name="Words1">if else true false for to downto while break case continue default switch case do</Keywords>
+            <Keywords name="Words2">click scroll_delta  clear position italic content box name layer padding background_color width height x y layer rotation_center_x rotation_center_y word_space line_space color font weight size src background_image picture fill_mode position_mode time replay component mix_mode target trans rotation effect level effect_tex tag row col fps display transparency background_x background_y background_fill_mode on_click background_position_mode on_dclick on_up on_down on_rclick on_rdclick on_rup on_rdown on_mclick on_mdclick on_mup on_mdown on_scroll_up on_scroll_down on_mouse can_skip on_mouse_in on_mouse_out catch_click catch_dclick catch_up catch_down catch_rclick catch_rdclick catch_rup catch_rdown catch_mclick catch_mdclick catch_mup catch_mdown catch_scroll_up catch_scroll_down father effect_front effect_front_tex effect_front_level effect_back effect_back_tex effect_back_level speed next_line_src next_line_row next_line_col next_line_fps next_page_src next_page_row next_page_col next_page_fps fullscreen resolution_width resolution_height effect_src scroll_position scroll_position_delta max_item direction file mix_mode_src video loop loop_begin control trans_src sound mute volume flip inherit rewrite pop_up</Keywords>
+            <Keywords name="Words3">@</Keywords>
+            <Keywords name="Words4">text_effect_front text_effect_back</Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" styleID="11" fgColor="000000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="FOLDEROPEN" styleID="12" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="FOLDERCLOSE" styleID="13" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="KEYWORD1" styleID="5" fgColor="0000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="KEYWORD2" styleID="6" fgColor="0080FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="KEYWORD3" styleID="7" fgColor="8000FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="KEYWORD4" styleID="8" fgColor="0080FF" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="COMMENT" styleID="1" fgColor="008040" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="COMMENT LINE" styleID="2" fgColor="008040" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="NUMBER" styleID="4" fgColor="FF00FF" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="OPERATOR" styleID="10" fgColor="400000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" />
+            <WordsStyle name="DELIMINER1" styleID="14" fgColor="808000" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="DELIMINER2" styleID="15" fgColor="808040" bgColor="FFFFFF" fontName="Courier New" fontStyle="0" fontSize="10" />
+            <WordsStyle name="DELIMINER3" styleID="16" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>
