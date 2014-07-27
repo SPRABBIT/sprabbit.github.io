@@ -1,5 +1,7 @@
-name: SpeShow Doc
+name: SpeShow Site
+encoding: utf-8
 markdown: redcarpet
 pygments: true
 port: 8081
-exclude: [Gemfile, Gemfile.lock]
+encoding: utf-8
+exclude: [Gemfile, Gemfile.lock, LICENSE, README.md]
