@@ -1,5 +1,0 @@
-name: SpeShow Doc
-markdown: redcarpet
-pygments: true
-port: 8081
-exclude: [Gemfile, Gemfile.lock]
