@@ -1,4 +1,0 @@
-属性名,值类型,说明
-fullscreen,布尔值,是否全屏显示。
-resolution_width,数字,窗口宽度。
-resolution_height,数字,窗口高度。

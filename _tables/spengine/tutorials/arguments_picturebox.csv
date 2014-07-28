@@ -1,7 +1,0 @@
-属性名,值类型,说明
-name,字符串,图片框的 ID，同一个屏幕中只允许存在一个该ID的组件。
-picture,字符串,需要显示的图片 ID。图片的定义方法见下文。
-fill_mode,数字,图片填充模式，可以是以下值：<ul><li>'Positioning'</li><li>'Fill'</li><li>'FitWidth'</li><li>'FitHeight'</li><li>'FitMin'</li><li>'FitMax'</li><li>'ResizeBox'</li></ul>默认为'Positioning'，即根据position_mode定位。
-position_mode,数字,图片位置模式，仅当fill_mode设置为'Positioning'时有用。可以是以下值：  <ul>  <li>'Normal'</li>  <li>'TopLeft'</li>  <li>'TopRight'</li> <li>'TopCenter'</li>  <li>'BottomLeft'</li>  <li>'BottomRight'</li>  <li>'BottomCenter'</li>  <li>'CenterLeft'</li>  <li>'CengerRight'</li> <li>'CenterAll'</li>  </ul>  默认为'Normal'，即根据position_x、position_y定位。
-position_x,数值,图片相对图片框左上角的水平位置。
-position_y,数值,图片相对图片框左上角的垂直位置。
