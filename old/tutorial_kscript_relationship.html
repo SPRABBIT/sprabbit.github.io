@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>KScript 与 SpeShow - KScript 教程</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="同人游戏,同人社团,游戏引擎,Galgame,AVG,SpeShow,SPRABBIT,SPENGINE,galgame引擎" />
+	<meta name="description" content="同人社团SPRABBIT-超科学兔耳中队是一个专注于技术创新的中文同人社团" />
+
+	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/shCore.css" type="text/css" />
+	<link rel="stylesheet" href="/css/shThemeDefault.css" type="text/css" />
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/">
+					<img src="/images/logo_speshow_long_xs.png">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/spengine/">简介</a>
+					</li>
+					<li><a href="/spengine/tutorial.html">文档</a>
+					</li>
+					<li><a href="/spengine/authors.html">关于</a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+	<div class="col-md-3">
+		<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+			<ul class="nav sidebar">
+	<li><a href="index.html">SpeShow 简介</a>
+	</li>
+	<li><a href="spengine.html">SPENGINE 简介</a>
+	</li>
+	<li><a href="why_speshow.html">为什么使用 SpeShow </a>
+	</li>
+	<li><a href="license.html">使用许可</a>
+	</li>
+	<li><a href="authors.html">作者 &amp; 招募</a>
+	</li>
+	<li>
+		<a href="download.html">下载</a>
+		<ul class="nav">
+			<li><a href="download.html">SpeShow</a>
+			</li>
+			<li><a href="editor.html">KScript Editor</a>
+			</li>
+			<li><a href="pack_guider.html">SSPackGuider</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="tutorial.html">教程</a>
+		<ul class="nav">
+			<li><a href="tutorial_deploy.html">部署 SpeShow</a>
+			</li>
+			<li>
+				<a href="tutorial_kscript.html">KScript</a>
+				<ul class="nav">
+					<li><a href="#tutorial_kscript_comment">注释</a>
+					</li>
+					<li><a href="#tutorial_kscript_variable">变量</a>
+					</li>
+					<li><a href="#tutorial_kscript_operation">运算</a>
+					</li>
+					<li><a href="#tutorial_kscript_function">函数</a>
+					</li>
+					<li><a href="#tutorial_kscript_branch">分支</a>
+					</li>
+					<li><a href="#tutorial_kscript_loop">循环</a>
+					</li>
+					<li><a href="#tutorial_kscript_include">include 函数</a>
+					</li>
+					<li><a href="#tutorial_kscript_speshow">KScript 与 SpeShow</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_standard.html">基本指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_standard_screen.html">屏幕</a>
+					</li>
+					<li><a href="tutorial_standard_component.html">基本UI组件</a>
+					</li>
+					<li><a href="tutorial_standard_textbox.html">文字框</a>
+					</li>
+					<li><a href="tutorial_standard_picturebox.html">图片框</a>
+					</li>
+					<li><a href="tutorial_standard_list.html">列表</a>
+					</li>
+					<li><a href="tutorial_standard_wait.html">等待</a>
+					</li>
+					<li><a href="tutorial_standard_exit.html">退出</a>
+					</li>
+					<li><a href="tutorial_standard_sample.html">示例</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_advanced.html">进阶指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_advanced_switch.html">切换</a>
+					</li>
+					<li><a href="tutorial_advanced_sound.html">声音</a>
+					</li>
+					<li><a href="tutorial_advanced_video.html">视频</a>
+					</li>
+					<li><a href="tutorial_advanced_effect.html">特效</a>
+					</li>
+					<li><a href="tutorial_advanced_animation.html">动画</a>
+					</li>
+					<li><a href="tutorial_advanced_particlesystem.html">粒子系统</a>
+					</li>
+					<li><a href="tutorial_advanced_capture.html">截图</a>
+					</li>
+					<li><a href="tutorial_advanced_save.html">存档</a>
+					</li>
+					<li><a href="tutorial_advanced_skip.html">跳过</a>
+					</li>
+					<li><a href="tutorial_advanced_texteffect.html">文字特效</a>
+					</li>
+					<li><a href="tutorial_advanced_dialogbox.html">AVG专用组件：对话框</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_senior.html">高级指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_senior_pre.html">预执行脚本</a>
+					</li>
+					<li><a href="tutorial_senior_inner.html">内部脚本</a>
+					</li>
+					<li><a href="tutorial_senior_listener.html">事件响应脚本</a>
+					</li>
+					<li><a href="tutorial_senior_jump.html">跳转脚本</a>
+					</li>
+				</ul>
+			</li>
+			<li><a href="tutorial_professional.html">高级用途</a>
+			</li>
+			<li><a href="tutorial_commands.html">指令索引</a>
+			</li>
+			<li><a href="tutorial_sample.html">示例</a>
+			</li>
+		</ul>
+	</li>
+	<li> <a href="show.html">演示</a>
+	</li>
+	<li> <a href="donate.html">捐赠</a>
+	</li>
+	<li> <a href="QA.html">FAQ</a>
+	</li>
+</ul>
+
+		</div>
+	</div>
+	<div class="col-md-9" role="main">
+		<h2>KScript 与 SpeShow</h2>
+
+<p>如上所述，KScript 通过调用 SpeShow 的引擎系统函数，来控制 SpeShow 的行为。为了使您使用 SpeShow 引擎系统函数更加得心应手，这里有必要解释一下 SpeShow 的引擎系统函数，到底做了什么。</p>
+
+<p>SpeShow 在开始运行时会执行根目录下的“pre.ks”文件。用户通过修改“pre.ks”中的脚本，从而达到控制引擎的效果。</p>
+
+<p>而实际上，SpeShow 引擎系统函数分为 <em>两种</em>，一种是直接执行的函数（如 @include ），这种函数会在执行到的时候直接调用引擎接口。而另外一种是延迟执行的函数，这种函数并不是直接修改 SpeShow 的显示内容，在执行该类函数时将根据参数生成一条引擎系统命令，并将其加入到 SpeShow 的引擎系统命令列表，SpeShow 将在空闲时依次执行该列表中的命令。我们提供的函数绝大多数是延迟执行的，只有极少数函数即时执行。</p>
+
+<p>说明这一点的原因，是要告诉大家 KScript 的执行和 SpeShow 引擎系统命令的执行不一定是同步的，大部分情况下是先执行脚本，生成所有的引擎系统命令后，再依次执行命令。所以您不能在顶层的脚本中使用“if”分支来使游戏出现分支，因为分支的条件将在执行到该行时直接计算出来，而不会延时计算。因此只能延迟使用if的时间到出现分支的地方。至于怎么延迟执行命令，以及在游戏中实现分支，将会在“高级指令”章节中介绍。</p>
+
+<hr>
+
+<p><a href="tutorial_kscript_relationship.html">上一节：KScript 与 SpeShow</a></p>
+
+<p><a href="tutorial_standard.html">下一节：SpeShow 基本指令</a></p>
+
+	</div>	
+</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div role="contentinfo" class="footer">
+		<div class="container">
+			<p>
+				
+			</p>
+		</div>
+	</div>
+</body>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="/js/shCore.js"></script>
+
+<script type="text/javascript" src="/js/shBrushXML.js"></script>
+
+<script type="text/javascript" src="/js/shBrushKScript.js"></script>
+
+<script type="text/javascript" src="/js/highlight.js"></script>
+
+<script type="text/javascript" src="/js/baidu_tongji.js"></script>
+
+</html>

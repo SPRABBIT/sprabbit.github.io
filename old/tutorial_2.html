@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>初识 KScript - SpeShow 教程</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="同人游戏,同人社团,游戏引擎,Galgame,AVG,SpeShow,SPRABBIT,SPENGINE,galgame引擎" />
+	<meta name="description" content="同人社团SPRABBIT-超科学兔耳中队是一个专注于技术创新的中文同人社团" />
+
+	<link rel="icon" href="favicon.png">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/shCore.css" type="text/css" />
+	<link rel="stylesheet" href="/css/shThemeDefault.css" type="text/css" />
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/">
+					<img src="/images/logo_speshow_long_xs.png">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/spengine/">简介</a>
+					</li>
+					<li><a href="/spengine/tutorial.html">文档</a>
+					</li>
+					<li><a href="/spengine/authors.html">关于</a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+	<div class="col-md-3">
+		<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+			<ul class="nav sidebar">
+	<li><a href="index.html">SpeShow 简介</a>
+	</li>
+	<li><a href="spengine.html">SPENGINE 简介</a>
+	</li>
+	<li><a href="why_speshow.html">为什么使用 SpeShow </a>
+	</li>
+	<li><a href="license.html">使用许可</a>
+	</li>
+	<li><a href="authors.html">作者 &amp; 招募</a>
+	</li>
+	<li>
+		<a href="download.html">下载</a>
+		<ul class="nav">
+			<li><a href="download.html">SpeShow</a>
+			</li>
+			<li><a href="editor.html">KScript Editor</a>
+			</li>
+			<li><a href="pack_guider.html">SSPackGuider</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="tutorial.html">教程</a>
+		<ul class="nav">
+			<li><a href="tutorial_deploy.html">部署 SpeShow</a>
+			</li>
+			<li>
+				<a href="tutorial_kscript.html">KScript</a>
+				<ul class="nav">
+					<li><a href="#tutorial_kscript_comment">注释</a>
+					</li>
+					<li><a href="#tutorial_kscript_variable">变量</a>
+					</li>
+					<li><a href="#tutorial_kscript_operation">运算</a>
+					</li>
+					<li><a href="#tutorial_kscript_function">函数</a>
+					</li>
+					<li><a href="#tutorial_kscript_branch">分支</a>
+					</li>
+					<li><a href="#tutorial_kscript_loop">循环</a>
+					</li>
+					<li><a href="#tutorial_kscript_include">include 函数</a>
+					</li>
+					<li><a href="#tutorial_kscript_speshow">KScript 与 SpeShow</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_standard.html">基本指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_standard_screen.html">屏幕</a>
+					</li>
+					<li><a href="tutorial_standard_component.html">基本UI组件</a>
+					</li>
+					<li><a href="tutorial_standard_textbox.html">文字框</a>
+					</li>
+					<li><a href="tutorial_standard_picturebox.html">图片框</a>
+					</li>
+					<li><a href="tutorial_standard_list.html">列表</a>
+					</li>
+					<li><a href="tutorial_standard_wait.html">等待</a>
+					</li>
+					<li><a href="tutorial_standard_exit.html">退出</a>
+					</li>
+					<li><a href="tutorial_standard_sample.html">示例</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_advanced.html">进阶指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_advanced_switch.html">切换</a>
+					</li>
+					<li><a href="tutorial_advanced_sound.html">声音</a>
+					</li>
+					<li><a href="tutorial_advanced_video.html">视频</a>
+					</li>
+					<li><a href="tutorial_advanced_effect.html">特效</a>
+					</li>
+					<li><a href="tutorial_advanced_animation.html">动画</a>
+					</li>
+					<li><a href="tutorial_advanced_particlesystem.html">粒子系统</a>
+					</li>
+					<li><a href="tutorial_advanced_capture.html">截图</a>
+					</li>
+					<li><a href="tutorial_advanced_save.html">存档</a>
+					</li>
+					<li><a href="tutorial_advanced_skip.html">跳过</a>
+					</li>
+					<li><a href="tutorial_advanced_texteffect.html">文字特效</a>
+					</li>
+					<li><a href="tutorial_advanced_dialogbox.html">AVG专用组件：对话框</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="tutorial_senior.html">高级指令</a>
+				<ul class="nav">
+					<li><a href="tutorial_senior_pre.html">预执行脚本</a>
+					</li>
+					<li><a href="tutorial_senior_inner.html">内部脚本</a>
+					</li>
+					<li><a href="tutorial_senior_listener.html">事件响应脚本</a>
+					</li>
+					<li><a href="tutorial_senior_jump.html">跳转脚本</a>
+					</li>
+				</ul>
+			</li>
+			<li><a href="tutorial_professional.html">高级用途</a>
+			</li>
+			<li><a href="tutorial_commands.html">指令索引</a>
+			</li>
+			<li><a href="tutorial_sample.html">示例</a>
+			</li>
+		</ul>
+	</li>
+	<li> <a href="show.html">演示</a>
+	</li>
+	<li> <a href="donate.html">捐赠</a>
+	</li>
+	<li> <a href="QA.html">FAQ</a>
+	</li>
+</ul>
+
+		</div>
+	</div>
+	<div class="col-md-9" role="main">
+		<h2>初识 KScript</h2>
+
+<h3>KScript 简介</h3>
+
+<p>KScript 是一种我们自己定制的脚本语言，其语法分析器由 <a href="http://www.antlr.org/">Antlr3</a> 生成。</p>
+
+<p>KScript 伴随 SPENGINE 出现，并且随 SPENGINE 的变化而变化。KScript 最早用于游戏<a href="http://blog.sprabbit.com/blog/2012/03/25/shake-magical-girls/">《颤抖吧废怯少女！》(SPG01)</a>中的关卡脚本，以及弹幕脚本。取名为 KScript 只是因为本人英文名以 K 开头，所以脚本文件后缀名为 ks，与其他同后缀脚本并没有任何关系。目前 KScript 的版本为 0.8.6，我们可以通过写 KScript 脚本来调用引擎接口。KScript 运行库会随着 SPENGINE 的公开而公开，届时便可将 KScript 应用于任何领域。</p>
+
+<p>本节介绍 KScript 的基本语法，以及如何在 SpeShow 中使用 KScript。本节由以下部分组成：</p>
+
+<ul>
+<li><a href="#tutorial_kscript_comment">注释</a></li>
+<li><a href="#tutorial_kscript_variable">变量</a></li>
+<li><a href="#tutorial_kscript_operation">运算</a></li>
+<li><a href="#tutorial_kscript_function">函数</a></li>
+<li><a href="#tutorial_kscript_branch">分支</a></li>
+<li><a href="#tutorial_kscript_loop">循环</a></li>
+<li><a href="#tutorial_kscript_include">include 函数</a></li>
+<li><a href="#tutorial_kscript_speshow">KScript 与 SpeShow</a></li>
+</ul>
+
+<p>如果您有编程经验，那么您一定能很快上手，因为他的语法（除函数外）跟大多数的编程语言相似。如果您没有接触过编程，那也没有关系，因为在简单的 SpeShow 程序中，并不涉及很多编程，但是您至少要掌握 <em><a href="#part_4">函数</a></em> 的用法以及 <em><a href="#part_7">KScript 与 SpeShow</a></em> 的关系。</p>
+
+<p><em>注意：如果需要在脚本中使用Unicode字符（比如中文），请将脚本文件保存为 UTF-8编码，否则程序将在执行脚本时发生错误。推荐使用<a href="editor.html">Notepad++</a>作为KScript编辑器。（0.8.3以下版本请保存为UTF-8 without BOM）</em></p>
+
+<hr>
+
+<h3 id="tutorial_kscript_comment">注释</h3>
+
+<p>首先我要介绍一下注释。注释即是插入到代码中的文字注解，在代码执行时将会被忽略。KScript 中的注释形式与大多数编程语言相同，分为行注释与块注释。行注释是以两个斜杠“//”开始，到本行末尾的部分。块注释是以“/<em>”开头到第一次出现“</em>/”的部分。</p>
+
+<p>请看以下例子：</p>
+
+<pre class="brush:ks">
+// 这里是行注释。
+
+a = 1; // 行注释不包括“//”之前的部分。
+
+/*
+    这里是块注释。
+    块注释可以包括多行。
+*/
+</pre>
+
+<p>请不要吝惜使用注释，以便能够马上理解代码。</p>
+
+<hr>
+
+<h3 id="tutorial_kscript_variable">变量</h3>
+
+<p>变量用于储存数据。KScript 是一门 <em>弱变量类型大小写敏感</em> 的语言，即使用变量前，无需声明变量类型。在对变量赋值的时候，变量类型被确定下来。</p>
+
+<h4>变量名（标识符）</h4>
+
+<p>KScript 中的变量名是由下划线或英文或其他语言文字开头，并由英文数字或其他语言文字组成的字串。换而言之，您可以使用中文变量名。注意变量名不能与 KScript 中的关键字一样。</p>
+
+<p>以下都是合法的变量名(不包括分号&quot;;&quot;)：</p>
+
+<pre class="brush:ks">
+a;
+b;
+variable;
+identifier_abc;
+_a;
+_1;
+a1;
+变量;
+</pre>
+
+<p>以下都是<em>非法</em>的变量名(不包括分号&quot;;&quot;)：</p>
+
+<pre class="brush:ks">
+0abc; // 不是以下划线、英文或其他语言文字开头
+variable1.0; // 含有非法字符"."
+</pre>
+
+<h4>变量类型</h4>
+
+<p>KScript 中的变量只有 4 种类型：</p>
+
+<ul>
+<li>整数：由数字组成的字串,或者由&quot;0x&quot;开头的由0-9或a-f组成的字串</li>
+<li>浮点数：含有一个小数点的有数字组成的字串</li>
+<li>布尔值：true 或者 false</li>
+<li>字符串：由英文双引号或单引号或中括号包围的字串</li>
+</ul>
+
+<p>以下是各种类型的例子：</p>
+
+<pre class="brush:ks">
+// 整型
+12356;
+0xff0088aa; // 该整型为十六进制数
+
+// 浮点
+1.3;
+0.46;
+
+// 布尔
+true;
+false;
+
+// 字符串
+"我是字符串";
+'Hello World!';
+[a = 1 + 1;]; // 中括号多用于内容为脚本的字符串
+</pre>
+
+<hr>
+
+<h3 id="tutorial_kscript_operation">运算</h3>
+
+<p>运算分为赋值运算、算术运算、布尔运算还有字符串加法。<em>一个单独的运算语句以英文分号“;”结束</em>。</p>
+
+<h4>赋值运算</h4>
+
+<p>赋值运算的目的就是给变量赋值。赋值运算的格式很简单，就是:</p>
+
+<pre class="brush:ks">       
+// 赋值运算             
+变量名 = 表达式; 
+</pre>
+
+<p>其中表达式可以是一个值（整数、浮点数、布尔值、字符串）、变量名，也可以是一个运算式，即本小节所谈及的，包括赋值运算、算术运算、布尔运算还有字符串加法。</p>
+
+<p>赋值结束后，左边标识符（变量名）所代表的值，将等于右边的值，<em>左边变量类型也将等于右边</em>。<em>如果使用未赋值的变量，那么变量值默认为整数0</em>。</p>
+
+<p>以下为赋值语句的例子:</p>
+
+<pre class="brush:ks">       
+// 直接赋值             
+a = 1;  // 此时a为整数1
+
+// 算术运算赋值             
+a = a + 1;  // 相当于"a = 1 + 1"此时a为整数2
+
+// 布尔运算赋值
+a = 1 > 0; // 此时a为布尔值true
+
+// 字符串加法
+a = "Hello" + "World"; // 此时a为字符串"HelloWorld"
+
+// 使用未赋值变量
+a = b; // 此时a和b均为整数0，因为b未被赋值
+
+// 连续赋值
+a = b = 1.0; // 此时a和b均为浮点数1.0
+</pre>
+
+<p>除了直接赋值（“=”）之外，KScript还支持以下赋值运算，用法与C语言相同，均可用直接赋值实现，并不需要掌握：</p>
+
+<ul>
+<li>“+=”：加等于，左边等于左边加右边</li>
+<li>“-=”：减等于，左边等于左边减右边</li>
+<li>“*=”：乘等于，左边等于左边乘右边</li>
+<li>“/=”：除等于，左边等于左边除以右边</li>
+<li>“++”：自加，变量在前，加1后运算；变量在后，运算后加1</li>
+<li>“--”：自减，变量在前，减1后运算；变量在后，运算后减1</li>
+</ul>
+
+<h4>算术运算</h4>
+
+<p>算术运算即是四则混合运算，是由“+ - * / % ( ) **”以及数值或变量组合而成的算式。算术运算语句最终返回这个式子的计算结果。</p>
+
+<p>所有运算符以及其含义如下：</p>
+
+<ul>
+<li>“+”：加法运算</li>
+<li>“-”：减法运算</li>
+<li>“*”：乘法运算</li>
+<li>“/”：除法运算</li>
+<li>“%”：取余运算</li>
+<li>“**”：乘方运算</li>
+<li>括号：更改运算次序</li>
+</ul>
+
+<p>以下为算术运算赋值语句的例子:</p>
+
+<pre class="brush:ks">       
+// 简单四则运算             
+a = 1 + 2 * (3 - 2**0 - 1);  // 此时a为整数3
+
+// 整数除法             
+a = a / 2;  // 此时相当于“a = 3 / 2”，a等于整数1
+
+// 浮点数除法
+a = 3 / 2.0; // 此时a为浮点数1.5
+</pre>
+
+<h4>布尔运算</h4>
+
+<p>布尔运算即是逻辑运算，是由“&gt; &lt; == != || &amp;&amp; ”以及数值或变量组合而成的算式。布尔运算语句最终返回这个式子的布尔值。</p>
+
+<p>所有运算符以及其含义如下：</p>
+
+<ul>
+<li>“&gt;”：大于，判断左边是否大于右边</li>
+<li>“&lt;”：小于，判断左边是否小于右边</li>
+<li>“&gt;=”：大于等于，判断左边是否大于或等于右边</li>
+<li>“&lt;=”：小于等于，判断左边是否小于或等于右边</li>
+<li>“==”：等于，判断左边是否等于右边</li>
+<li>“!=”：不等于，判断左边是否不等于右边</li>
+<li>“||”：逻辑或，判断是否左边为真或右边为真</li>
+<li>“&amp;&amp;”：逻辑且，判断是否左边为真且右边为真</li>
+<li>“!”：非，判断右边是否为假</li>
+</ul>
+
+<p>以下为布尔运算赋值语句的例子:</p>
+
+<pre class="brush:ks">       
+// 简单布尔组合运算             
+a = (1 < 2 || 3 < 1) && false;  // 此时a为布尔值false
+</pre>
+
+<h4>字符串加法</h4>
+
+<p>字符串加法是指串联字符串，即将两个字符串首尾拼接。其语法为：</p>
+
+<pre class="brush:ks">
+字符串1 + 字符串2;
+</pre>
+
+<p>若上式中有一个变量的类型不是字符串，那么同样会进行字符串加法，但<em>非字符串会强制转换为字符串</em>。</p>
+
+<p>字符串加法赋值语句的例子如下：</p>
+
+<pre class="brush:ks">       
+字符串1 = "Hello";
+字符串2 = "World";
+
+// 字符串强制转换
+字符串3 = 字符串1 + 字符串4; // 此时变量“字符串4”并未赋值，因此默认为整数0，字符串3的值为"Hello0"
+
+// 一般字符串加法
+字符串5 = 字符串1 + " " + 字符串2; // 此时字符串5的值为"Hello World"
+</pre>
+
+<hr>
+
+<h3 id="tutorial_kscript_function">函数</h3>
+
+<p>KScript 的函数基本上是引擎系统函数，用于调用引擎内部对应的函数方法。</p>
+
+<h4>调用函数</h4>
+
+<p>KScript 调用函数的格式如下：</p>
+
+<pre class="brush:ks">  
+// 标准格式     
+@函数名1{ 参数名1:参数值1 , 参数名2:参数值2 , ... };
+@函数名2{ 
+    参数名1:值1,
+    参数名2:值2,
+    ...
+};
+
+// 省略格式（省略逗号及分号）
+@函数名1{ 参数名1:参数值1 参数名2:参数值2 ... }
+@函数名2{ 
+    参数名1:值1 
+    参数名2:值2 
+    ... 
+}
+
+// 最简格式（省略参数列表）
+@函数名;
+</pre>
+
+<p>因为这些函数都以“@”开头，所以 KScript 中的函数又称“AT函数”。SpeShow 的引擎系统函数，及其参数名列表将在其他章节中描述。</p>
+
+<h4>自定义函数</h4>
+
+<p>这里的自定义与其他语言的定义函数有很大区别。这里的自定义，意思是执行一段脚本，其中某些变量的值可以指定。自定义函数并没有产生新的引擎系统函数，只是将一些脚本语句与函数组合起来。</p>
+
+<p>自定义函数的格式如下：</p>
+
+<pre class="brush:ks">  
+// 标准格式     
+@自定义函数名(参数名1, 参数名2, ...)
+{[
+    // 在这里写脚本，函数将返回最后脚本最后一行的值
+]};
+
+
+// 省略格式（省略参数列表及分号）
+@自定义函数名()
+{
+    // 在这里写脚本
+}
+</pre>
+
+<p>函数有两种，在 0.8.6 版本之前的KScript，函数脚本实际上是一个包含脚本内容的字符串，因此可以用&quot;[]&quot;包含，当然也可以用英文单引号或双引号。其中自定义函数名的命名规则跟变量的命名规则相同。<em>在0.8.6版本之后，函数是真正意义上的函数，并不是脚本字符串，并且所以不再需要用“[]”包含，并且可以用return返回值，</em></p>
+
+<p>调用自定义函数时，格式和调用其他引擎系统函数的格式一样：</p>
+
+<pre class="brush:ks">  
+// 标准格式
+@自定义函数名{ 
+    自定参数1:值1,
+    自定参数2:值2,
+    ...
+};
+
+// 省略格式（省略逗号及分号）
+@自定义函数名{ 
+    自定参数1:值1 
+    自定参数2:值2 
+    ... 
+}
+
+// 最简格式（省略参数列表，无任何参数传入）
+@自定义函数名;
+</pre>
+
+<p>调用自定义函数时，将会执行一次定义好的脚本，执行之前将会按照参数列表的设置，初始化各变量。<em>各参数按值传入</em>，函数内的变量为<em>局部变量</em>，不会影响函数外的变量。调用自定义函数的参数列表与定义函数时的参数列表并<em>无直接关系</em>，定义时指定参数列表仅仅是为了注释，因此定义函数时可以完全省略参数列表。</p>
+
+<p>下面是一个例子：</p>
+
+<pre class="brush:ks">  
+// 定义一种由三个数参与的运算
+@自定义运算(参数1, 参数2, 参数3)
+{ 
+    return 参数1 + 参数2 * 参数3;
+}
+
+// 调用自定义运算
+结果 = @自定义运算{ 
+    参数1: 1 
+    参数2: 2 
+    参数3: 3
+}
+
+// 这时变量“结果”的值为整数7（函数内的变量为局部变量）
+</pre>
+
+<hr>
+
+<h3 id="tutorial_kscript_branch">分支</h3>
+
+<p>分支即是使程序根据实际情况，执行脚本中的不同部分。</p>
+
+<p>在KScript中可以使用“if/else”语句，或“switch”语句实现。</p>
+
+<h4>if 分支</h4>
+
+<p>“if/else”语句的语法格式为：</p>
+
+<pre class="brush: ks">
+// 单执行语句表达式（语句需以英文分号“;”结束）
+if(条件表达式) 语句1
+else 语句2
+
+// 多执行语句表达式
+if(条件表达式)
+{
+    // 这里可以包含多条语句
+}
+else
+{
+    // 这里可以包含多条语句
+}
+
+// if else 嵌套
+if(条件表达式)
+{
+    // 这里可以包含多条语句
+}
+else if(另一个条件表达式)
+{
+    // 这里可以包含多条语句
+}
+</pre>
+
+<p>其中所有else及其后部分均可省略。当且仅当“if”后面的条件表达式为“true”（布尔型）或不等于0（整型或浮点数）时，执行跟在“if”后面的语句，否则执行“else”后面的语句（仅当“else”及其后语句存在时）。</p>
+
+<h4>switch 分支</h4>
+
+<p>“switch”分支的语法为：</p>
+
+<pre class="brush: ks">
+// 完整switch命令（语句可以为语句块）
+switch(表达式)
+{
+    case 值1: 语句1
+    case 值2: 语句2
+    case 值3: 语句3
+    ...
+    default: 语句N
+}
+</pre>
+
+<p>“switch”语句会将其后的表达式与所有 case 的值进行比较，如果表达式的值等于 case 的值，则执行该 case 后面的语句。若无一 case 匹配，则执行 default 后的语句。当然，与 if 分支一样，<em>语句可以是语句块，即由花括号“{}”括起来的多个语句</em>。这里有一点与 C/C++ 不同的是，不需要使用 break 进行中断，匹配后仅执行紧跟相应 case 的语句，不会调用到其他 case 或 default 中的语句。</p>
+
+<hr>
+
+<h3 id="tutorial_kscript_loop">循环</h3>
+
+<p>循环即是使程序重复多次执行同一段脚本。</p>
+
+<p>KScript 中的循环分为“for”循环和“while”循环。</p>
+
+<h4>for 循环</h4>
+
+<p>for循环的语法格式为：</p>
+
+<pre class="brush: ks">
+// 顺序式（语句可以为语句块）
+for 变量1 = 值1 to 值2
+    语句
+
+// 逆序式（语句可以为语句块）
+for 变量1 = 值1 downto 值2
+    语句
+</pre>
+
+<p>在上面的循环里，“变量1”将首先被赋值为 值1，然后执行后面的语句一次。执行后，“变量1”将加一（或减一，<em>取决于 值2 的大小，与 to 或是 downto 无关</em>），再执行语句一次。重复直到“变量1”超出了 值1 到 值2 的范围（若 值2 大于 值1，则若“变量1”大于 值2 便不再执行后面的语句，反之亦然）。和上面的分支一样，<em>语句可以是语句块，即由花括号“{}”括起来的多个语句</em>。</p>
+
+<h4>while 循环</h4>
+
+<p>for循环的语法格式为：</p>
+
+<pre class="brush: ks">                    
+// 条件在先式
+while(条件表达式)
+    语句
+    
+// 条件在后式
+do 语句
+while(条件表达式)
+</pre>
+
+<p>对于条件在先式，当条件表达式为true或不等于0，则重复执行语句，直到条件表达式为为false或等于0，便不再执行。</p>
+
+<p>对于条件在后式，则先执行一次语句，若条件表达式为true或不等于0，则再重复执行语句，直到条件表达式为为false或等于0，便不再执行。</p>
+
+<hr>
+
+<h3 id="tutorial_kscript_include">include 函数</h3>
+
+<p>include 函数是 KScript 唯一的自带函数，并不属于 SpeShow 引擎系统函数，因此在这里介绍。</p>
+
+<p>include 函数的作用是在脚本文件中，引进另外一个脚本文件中的内容，即插入一段储存在当前脚本文件之外的脚本。include 的好处是，当您需要重复用到某一段脚本（例如自定义函数）时，您不需要把这段脚本复制N次，只需把这段脚本储存在另外一个脚本文件中，然后在你需要用到它的地方，include 这一个文件。</p>
+
+<p>include 函数的格式如下：</p>
+
+<pre class="brush: ks">                    
+// 完整参数列表
+@include{
+    file: 文件路径字符串
+    inherit: 布尔值1
+    rewrite: 布尔值2
+}
+    
+// 最简式
+@include{ file: 文件路径字符串 }
+</pre>
+
+<p>参数解释：</p>
+
+<table><tr><td>属性名</td><td>值类型</td><td>说明</td></tr><tr><td>file</td><td>字符串</td><td>必须参数，文件的完成路径，包括文件名及其后缀，如“script/script_file.ks”。</td></tr><tr><td>inherit</td><td>布尔值</td><td>是否从父脚本中继承变量信息。默认为false。</td></tr><tr><td>rewrite</td><td>布尔值</td><td>是否将目标脚本的变量信息重写到父脚本。默认为false。</td></tr></table>
+
+<hr>
+
+<h3 id="tutorial_kscript_speshow">KScript 与 SpeShow</h3>
+
+<p>如上所述，KScript 通过调用 SpeShow 的引擎系统函数，来控制 SpeShow 的行为。为了使您使用 SpeShow 引擎系统函数更加得心应手，这里有必要解释一下 SpeShow 的引擎系统函数，到底做了什么。</p>
+
+<p>SpeShow 在开始运行时会执行根目录下的“pre.ks”文件。用户通过修改“pre.ks”中的脚本，从而达到控制引擎的效果。</p>
+
+<p>而实际上，SpeShow 引擎系统函数分为 * 两种 *，一种是直接执行的函数（如 @include ），这种函数会在执行到的时候直接调用引擎接口。而另外一种是延迟执行的函数，这种函数并不是直接修改 SpeShow 的显示内容，在执行该类函数时将根据参数生成一条引擎系统命令，并将其加入到 SpeShow 的引擎系统命令列表，SpeShow 将在空闲时依次执行该列表中的命令。我们提供的函数绝大多数是延迟执行的，只有极少数函数即时执行。</p>
+
+<p>说明这一点的原因，是要告诉大家 KScript 的执行和 SpeShow 引擎系统命令的执行不一定是同步的，大部分情况下是先执行脚本，生成所有的引擎系统命令后，再依次执行命令。所以您不能在顶层的脚本中使用“if”分支来使游戏出现分支，因为分支的条件将在执行到该行时直接计算出来，而不会延时计算。因此只能延迟使用if的时间到出现分支的地方。至于怎么延迟执行命令，以及在游戏中实现分支，将会在“高级指令”章节中介绍。</p>
+
+<hr>
+
+<p><a href="tutorial_1.html">上一节：部署 SpeShow</a></p>
+
+<p><a href="tutorial_3.html">下一节：基本指令（UI布局）</a></p>
+
+	</div>	
+</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div role="contentinfo" class="footer">
+		<div class="container">
+			<p>
+				
+			</p>
+		</div>
+	</div>
+</body>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="/js/shCore.js"></script>
+
+<script type="text/javascript" src="/js/shBrushXML.js"></script>
+
+<script type="text/javascript" src="/js/shBrushKScript.js"></script>
+
+<script type="text/javascript" src="/js/highlight.js"></script>
+
+<script type="text/javascript" src="/js/baidu_tongji.js"></script>
+
+</html>
