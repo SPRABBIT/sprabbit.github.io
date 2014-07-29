@@ -64,14 +64,19 @@ eos
         choices = Dir['**/*'].reject { |x| File.symlink?(x) }
         if choices.include?(@file)
           result = ""
-          
+          i = 0
           CSV.foreach(@file) do |row|
             rowText = ""
             row.each do |cell|
-              rowText += "<td>#{cell}</td>"
-            end
-            result += "<tr>#{rowText}</tr>" 
-          end
+							if i == 0
+              	rowText += "<th>#{cell}</th>"
+							else
+								rowText += "<td>#{cell}</td>"
+							end
+            end						
+						result += "<tr>#{rowText}</tr>" 						
+						i += 1
+					end
           
           return "<table>#{result}</table>"
         else

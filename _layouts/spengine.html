@@ -1,25 +1,70 @@
----
+--- 
 layout: bootstrap
 keywords: 同人游戏,同人社团,游戏引擎,Galgame,AVG,SpeShow,SPRABBIT,SPENGINE,galgame引擎
 description: 同人社团SPRABBIT-超科学兔耳中队是一个专注于技术创新的中文同人社团
 icon: favicon.png
 css:
  - shCore.css
- - shThemeDefault.css
-js:
+ - shThemeMidnight.css
+ - spengine.css
+js: 
  - shCore.js
  - shBrushXML.js
  - shBrushKScript.js
  - highlight.js
+ - spengine/nav_collapse.js
 ---
 
-<div class="row">
-	<div class="col-md-3">
-		<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
-			{% include spengine/left.html %}
+<body data-spy="scroll" data-target=".navbar">
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/">
+					<img src="/images/logo_speshow_long_xs.png">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/spengine/">简介</a>
+					</li>
+					<li><a href="/spengine/tutorial.html">文档</a>
+					</li>
+					<li><a href="/spengine/authors.html">关于</a>
+					</li>
+					<li><a href="/speshow/">新版</a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
 		</div>
 	</div>
-	<div class="col-md-9" role="main">
-		{{ content }}
-	</div>	
-</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div data-spy="affix" data-offset-top="70" data-offset-bottom="20" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+					{% include spengine/left.html %}
+				</div>
+			</div>
+			<div class="col-md-9" role="main">
+				{{ content }}
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<div role="contentinfo" class="footer">
+		<div class="container copyright">
+			<p>Copyright &copy; 2011-2014 <a href="http://www.sprabbit.com/">SPRABBIT</a></p>
+			<p>Designed by <a href="http://kennethj.lofter.com/">Kenneth.J</a>. Built with <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+		</div>
+	</div>
+</body>
+
+

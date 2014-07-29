@@ -2,29 +2,6 @@ body {
     font-family: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
 }
 
-.sidebar .nav {
-    display: none;
-    padding-bottom: 10px;
-}
-
-.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
-    display: block;
-}
-
-.sidebar{
-	margin-top: 20px;
-	width: 200px;
-}
-
-.affix{
-	top: 0px;
-}
-
-.sidebar>li a{
-	padding-top: 1px;
-	padding-bottom: 1px;
-}
-
 #footer{
 	text-align: center;
 	color: #585858;
@@ -40,6 +17,3 @@ body {
 	margin: 2px auto;
 }
 
-ul{
-	padding: 0;
-}

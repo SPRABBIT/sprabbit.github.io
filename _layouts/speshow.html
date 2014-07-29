@@ -6,6 +6,7 @@ icon: favicon.png
 css:
  - shCore.css
  - shThemeDefault.css
+ - spengine.css
 js:
  - shCore.js
  - shBrushXML.js
@@ -13,13 +14,52 @@ js:
  - highlight.js
 ---
 
-<div class="row">
-	<div class="col-md-3">
-		<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
-			{% include speshow/left.html %}
+<body data-spy="scroll" data-target=".navbar">
+	<div class="navbar navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/">
+					<img src="/images/logo_speshow_long_xs.png">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/spengine/">简介</a>
+					</li>
+					<li><a href="/spengine/tutorial.html">文档</a>
+					</li>
+					<li><a href="/spengine/authors.html">关于</a>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
 		</div>
 	</div>
-	<div class="col-md-9" role="main">
-		{{ content }}
-	</div>	
-</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+					{% include speshow/left.html %}
+				</div>
+			</div>
+			<div class="col-md-9" role="main">
+				{{ content }}
+			</div>	
+		</div>
+	</div>
+	<!-- /.container -->
+
+	<div role="contentinfo" class="footer">
+		<div class="container copyright">
+			<p>Copyright &copy; 2011-2014 <a href="http://www.sprabbit.com/">SPRABBIT</a></p>
+			<p>Designed by <a href="http://kennethj.lofter.com/">Kenneth.J</a>. Built with <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+		</div>
+	</div>
+</body>

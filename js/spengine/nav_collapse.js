@@ -1,23 +1,17 @@
 $(function() {
-	$('#left>ul').hide();
-	$('#left>ul ul').hide();
-	$('#left li').each(function(index) {
-		var self = $(this);
-		var link = self.find('a').attr('href');
-		var pathname = location.pathname;
-		var isCurPath = false;
-		if (pathname == '/spengine/' + link) {
-			isCurPath = true;
-		} else if (link === 'index.html' && pathname === '/spengine/') {
-			isCurPath = true;
+	var as = $('.sidebar li a');
+	for(var i = 0; i < as.length; i++) {
+		var a = $(as[i]);
+		var href = a.attr('href');
+		var location = window.location.href;
+		if(location.indexOf(href) >= 0){
+			a.parent().addClass('active');
+			a.parents().show();
+			a.next().show();
+			break;
 		}
-		if (isCurPath) {
-			self.addClass('cur_path');
-			self.parents('ul').show();
-			self.children('ul').show();
-		}
-	});
-	$('#left>ul').show();
+	}
+	$('table').addClass('table table-hover table-bordered')
 });
 
 
