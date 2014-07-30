@@ -5,36 +5,31 @@ description: 同人社团SPRABBIT-超科学兔耳中队是一个专注于技术�
 icon: favicon.png
 css:
  - shCore.css
- - shThemeDefault.css
+ - shThemeMidnight.css
  - spengine.css
 js:
  - shCore.js
  - shBrushXML.js
  - shBrushJScript.js
  - highlight.js
+ - spengine/nav_collapse.js
 ---
 
 <body data-spy="scroll" data-target=".navbar">
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="/">
+				<a href="/speshow/">
 					<img src="/images/logo_speshow_long_xs.png">
 				</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/spengine/">简介</a>
+					<li><a href="/speshow/">简介</a>
 					</li>
-					<li><a href="/spengine/tutorial.html">文档</a>
+					<li><a href="/speshow/tutorial.html">教程</a>
 					</li>
-					<li><a href="/spengine/authors.html">关于</a>
+					<li><a href="/speshow/about.html">关于</a>
 					</li>
 				</ul>
 			</div>
@@ -45,11 +40,11 @@ js:
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div data-spy="affix" data-offset-top="70" data-offset-bottom="200" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+				<div data-spy="affix" data-offset-top="70" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
 					{% include speshow/left.html %}
 				</div>
 			</div>
-			<div class="col-md-9" role="main">
+			<div class="col-md-9 content-main" role="main">
 				{{ content }}
 			</div>	
 		</div>

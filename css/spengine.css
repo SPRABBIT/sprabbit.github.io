@@ -19,7 +19,7 @@
 }
 
 .sidebar li.active>a {
-	border-right: solid 3px #264ecc;
+	border-right: solid 3px #1450a5;
 }
 
 .sidebar>li a{
@@ -69,6 +69,24 @@
 	color: #b70505;
 }
 
+.warn-new-doc {
+	margin-top: 20px;
+}
+
 .syntaxhighlighter{
 	padding: 10px 3px;
+}
+
+em {
+	font-weight: bold;
+	color: #b21e1e;
+	font-style: normal;
+}
+
+.content-main img{
+	border-radius: 8px;
+}
+
+.content-main ul{
+	padding-left: 18px;
 }

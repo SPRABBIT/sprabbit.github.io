@@ -19,13 +19,7 @@ js:
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="/">
+				<a href="/spengine/">
 					<img src="/images/logo_speshow_long_xs.png">
 				</a>
 			</div>
@@ -48,11 +42,11 @@ js:
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div data-spy="affix" data-offset-top="70" data-offset-bottom="20" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+				<div data-spy="affix" data-offset-top="70" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
 					{% include spengine/left.html %}
 				</div>
 			</div>
-			<div class="col-md-9" role="main">
+			<div class="col-md-9 content-main" role="main">
 				{{ content }}
 			</div>
 		</div>
