@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>SpeShow 简介 - SpeShow图文演示</title>
+	<title>演示 - SpeShow图文演示</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="同人游戏,同人社团,游戏引擎,Galgame,AVG,SpeShow,SPRABBIT,SPENGINE,galgame引擎" />
 	<meta name="description" content="同人社团SPRABBIT-超科学兔耳中队是一个专注于技术创新的中文同人社团" />
@@ -31,17 +31,19 @@
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="/speshow/">
+				<a href="/spengine/">
 					<img src="/images/logo_speshow_long_xs.png">
 				</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/speshow/">简介</a>
+					<li><a href="/spengine/">简介</a>
 					</li>
-					<li><a href="/speshow/tutorial.html">教程</a>
+					<li><a href="/spengine/tutorial.html">文档</a>
 					</li>
-					<li><a href="/speshow/about.html">关于</a>
+					<li><a href="/spengine/authors.html">关于</a>
+					</li>
+					<li><a href="/speshow/">新版</a>
 					</li>
 				</ul>
 			</div>
@@ -54,18 +56,31 @@
 			<div class="col-md-3">
 				<div data-spy="affix" data-offset-top="70" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
 					<ul class="nav sidebar">
-	<li><a href="index.html">SpeShow.JS 简介</a>
+	
+	<li class="warn-old-doc">
+		<a href="/speshow/">
+			此为旧版文档(KS版本)<br/>
+			点击这里查看新版(JS版本)
+		</a>
+	</li>
+	<li><a href="index.html">SpeShow 简介</a>
+	</li>
+	<li><a href="spengine.html">SPENGINE 简介</a>
+	</li>
+	<li><a href="why_speshow.html">为什么使用 SpeShow </a>
 	</li>
 	<li><a href="license.html">使用许可</a>
+	</li>
+	<li><a href="authors.html">作者 &amp; 招募</a>
 	</li>
 	<li>
 		<a href="download.html">下载</a>
 		<ul class="nav">
 			<li><a href="download.html">SpeShow</a>
 			</li>
-			<li><a href="pack_guider.html">SSPackGuider</a>
+			<li><a href="editor.html">KScript Editor</a>
 			</li>
-			<li><a href="editor.html">编辑器推荐</a>
+			<li><a href="pack_guider.html">SSPackGuider</a>
 			</li>
 		</ul>
 	</li>
@@ -75,13 +90,23 @@
 			<li><a href="tutorial_deploy.html">部署 SpeShow</a>
 			</li>
 			<li>
-				<a href="tutorial_kscript.html">JavaScript</a>
+				<a href="tutorial_kscript.html">KScript</a>
 				<ul class="nav">
-					<li><a href="#tutorial_kscript_comment">Node.js</a>
+					<li><a href="tutorial_kscript_comment.html">注释</a>
 					</li>
-					<li><a href="#tutorial_kscript_include">include 函数</a>
+					<li><a href="tutorial_kscript_variable.html">变量</a>
 					</li>
-					<li><a href="#tutorial_kscript_speshow">JavaScript 与 SpeShow</a>
+					<li><a href="tutorial_kscript_operation.html">运算</a>
+					</li>
+					<li><a href="tutorial_kscript_function.html">函数</a>
+					</li>
+					<li><a href="tutorial_kscript_branch.html">分支</a>
+					</li>
+					<li><a href="tutorial_kscript_loop.html">循环</a>
+					</li>
+					<li><a href="tutorial_kscript_include.html">include 函数</a>
+					</li>
+					<li><a href="tutorial_kscript_speshow.html">KScript 与 SpeShow</a>
 					</li>
 				</ul>
 			</li>
@@ -160,40 +185,28 @@
 	</li>
 	<li> <a href="QA.html">FAQ</a>
 	</li>
-	<li class="warn-new-doc">
-		<a href="/spengine/">
-			旧版文档(KS版本)
-		</a>
-	</li>
 </ul>
 
 				</div>
 			</div>
 			<div class="col-md-9 content-main" role="main">
-				<h2>SpeShow.JS 简介</h2>
+				<h2>演示</h2></h2>
 
-<p><img src="/images/Logo_SpeShow_Long_128.jpg" alt="SpeShow.JS"></p>
+<p><a href="http://www.bilibili.tv/video/av338148/">SpeShow v0.8 Alpha Demo演示</a></p>
 
-<p>SpeShow.JS是一个基于 DirectX 9.0c 以及 <a href="http://www.nodejs.org">node.js</a> 的图文演示程序制作系统，一种node.js的图形界面程序制作的解决方案。SpeShow音近“Special”，希望独显个性。</p>
+<div class="video_box">
+<embed class="video" src="http://www.tudou.com/v/HI4Q1CjGKdg/&rpid=118541&resourceId=118541_05_05_99&bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400">
+</embed>
+</div>
 
-<p>通过使用Javascript语言编写一些程序，用户就可以使用自己的图片，以及输入自己的文字，为其添加动态特效，并得到最终演示程序。<a href="/spengine/">旧版SpeShow</a> 使用一种自定脚本KScript作为调用脚本，因为其专用性高，学习曲线长，理解成本高，所以新版的SpeShow.JS我们选用了WEB前后端都非常流行的Javascript作为脚本语言。<em>以后若不说明，SpeShow均指代新版的SpeShow.JS</em>，而非旧版(0.9及以下KS版本).</p>
+<p><a href="http://www.bilibili.tv/video/av374493/">SpeShow v0.82 Beta Demo演示</a> <a href="tutorial_8.html">示例下载</a></p>
 
-<p>主要功能及特点有：</p>
+<div class="video_box">
+<embed class="video" src="http://www.tudou.com/v/HJ5C2Ng_pPE/&rpid=118541&resourceId=118541_05_05_99&bid=05/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400">
+</embed>
+</div>
 
-<ul>
-<li>基于Node.js(ver 0.11.11)</li>
-<li>视频播放以及音乐播放</li>
-<li>数字图像处理滤镜效果</li>
-<li>文字渲染特效</li>
-<li>基本插值动画</li>
-<li>下雪，下雨等粒子特效</li>
-<li>文字类游戏(ADV / AVG)支持</li>
-<li>自定义滤镜，自定义变换</li>
-</ul>
-
-<p>当前SpeShow版本为 Beta 0.11.1 其源代码在<a href="https://github.com/denjones/spengine">Github</a>上。</p>
-
-			</div>	
+			</div>
 		</div>
 	</div>
 	<!-- /.container -->
@@ -207,6 +220,8 @@
 </body>
 
 
+
+
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
@@ -215,7 +230,7 @@
 
 <script type="text/javascript" src="/js/shBrushXML.js"></script>
 
-<script type="text/javascript" src="/js/shBrushJScript.js"></script>
+<script type="text/javascript" src="/js/shBrushKScript.js"></script>
 
 <script type="text/javascript" src="/js/highlight.js"></script>
 

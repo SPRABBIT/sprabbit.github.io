@@ -31,17 +31,19 @@
 	<div class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="/speshow/">
+				<a href="/spengine/">
 					<img src="/images/logo_speshow_long_xs.png">
 				</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/speshow/">简介</a>
+					<li><a href="/spengine/">简介</a>
 					</li>
-					<li><a href="/speshow/tutorial.html">教程</a>
+					<li><a href="/spengine/tutorial.html">文档</a>
 					</li>
-					<li><a href="/speshow/about.html">关于</a>
+					<li><a href="/spengine/authors.html">关于</a>
+					</li>
+					<li><a href="/speshow/">新版</a>
 					</li>
 				</ul>
 			</div>
@@ -54,18 +56,31 @@
 			<div class="col-md-3">
 				<div data-spy="affix" data-offset-top="70" class="navbar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
 					<ul class="nav sidebar">
-	<li><a href="index.html">SpeShow.JS 简介</a>
+	
+	<li class="warn-old-doc">
+		<a href="/speshow/">
+			此为旧版文档(KS版本)<br/>
+			点击这里查看新版(JS版本)
+		</a>
+	</li>
+	<li><a href="index.html">SpeShow 简介</a>
+	</li>
+	<li><a href="spengine.html">SPENGINE 简介</a>
+	</li>
+	<li><a href="why_speshow.html">为什么使用 SpeShow </a>
 	</li>
 	<li><a href="license.html">使用许可</a>
+	</li>
+	<li><a href="authors.html">作者 &amp; 招募</a>
 	</li>
 	<li>
 		<a href="download.html">下载</a>
 		<ul class="nav">
 			<li><a href="download.html">SpeShow</a>
 			</li>
-			<li><a href="pack_guider.html">SSPackGuider</a>
+			<li><a href="editor.html">KScript Editor</a>
 			</li>
-			<li><a href="editor.html">编辑器推荐</a>
+			<li><a href="pack_guider.html">SSPackGuider</a>
 			</li>
 		</ul>
 	</li>
@@ -75,13 +90,23 @@
 			<li><a href="tutorial_deploy.html">部署 SpeShow</a>
 			</li>
 			<li>
-				<a href="tutorial_kscript.html">JavaScript</a>
+				<a href="tutorial_kscript.html">KScript</a>
 				<ul class="nav">
-					<li><a href="#tutorial_kscript_comment">Node.js</a>
+					<li><a href="tutorial_kscript_comment.html">注释</a>
 					</li>
-					<li><a href="#tutorial_kscript_include">include 函数</a>
+					<li><a href="tutorial_kscript_variable.html">变量</a>
 					</li>
-					<li><a href="#tutorial_kscript_speshow">JavaScript 与 SpeShow</a>
+					<li><a href="tutorial_kscript_operation.html">运算</a>
+					</li>
+					<li><a href="tutorial_kscript_function.html">函数</a>
+					</li>
+					<li><a href="tutorial_kscript_branch.html">分支</a>
+					</li>
+					<li><a href="tutorial_kscript_loop.html">循环</a>
+					</li>
+					<li><a href="tutorial_kscript_include.html">include 函数</a>
+					</li>
+					<li><a href="tutorial_kscript_speshow.html">KScript 与 SpeShow</a>
 					</li>
 				</ul>
 			</li>
@@ -160,40 +185,37 @@
 	</li>
 	<li> <a href="QA.html">FAQ</a>
 	</li>
-	<li class="warn-new-doc">
-		<a href="/spengine/">
-			旧版文档(KS版本)
-		</a>
-	</li>
 </ul>
 
 				</div>
 			</div>
 			<div class="col-md-9 content-main" role="main">
-				<h2>SpeShow.JS 简介</h2>
+				<h2>SpeShow 简介</h2>
 
-<p><img src="/images/Logo_SpeShow_Long_128.jpg" alt="SpeShow.JS"></p>
+<p><img src="/images/Logo_SpeShow_Long_128.jpg" alt="SpeShow"></p>
 
-<p>SpeShow.JS是一个基于 DirectX 9.0c 以及 <a href="http://www.nodejs.org">node.js</a> 的图文演示程序制作系统，一种node.js的图形界面程序制作的解决方案。SpeShow音近“Special”，希望独显个性。</p>
+<p>SpeShow是一个基于<a href="spengine.html">SPENGINE DirectX 9.0c</a>的图文演示程序制作系统。SpeShow音近“Special”，独立而与众不同。</p>
 
-<p>通过使用Javascript语言编写一些程序，用户就可以使用自己的图片，以及输入自己的文字，为其添加动态特效，并得到最终演示程序。<a href="/spengine/">旧版SpeShow</a> 使用一种自定脚本KScript作为调用脚本，因为其专用性高，学习曲线长，理解成本高，所以新版的SpeShow.JS我们选用了WEB前后端都非常流行的Javascript作为脚本语言。<em>以后若不说明，SpeShow均指代新版的SpeShow.JS</em>，而非旧版(0.9及以下KS版本).</p>
+<p>与PowerPoint软件类似，用户可以使用自己的图片，以及输入自己的文字，为其添加动态特效，并得到最终演示程序。而与PowerPoint等演示文稿制作软件不同，本软件并不局限于幻灯片的形式。基于脚本的设计，使用户对内容的显示具有很大的自主权。所生成的产品为可交互的软件产品，资源文件经过加密压缩，具有良好地保密性。与此相对，用户需要使用软件所定义的脚本语言与引擎进行交互。项目的后续工作是制作一款脚本生成工具，使用图形化界面，简化用户操作，降低使用脚本的难度。</p>
 
 <p>主要功能及特点有：</p>
 
 <ul>
-<li>基于Node.js(ver 0.11.11)</li>
-<li>视频播放以及音乐播放</li>
-<li>数字图像处理滤镜效果</li>
-<li>文字渲染特效</li>
-<li>基本插值动画</li>
-<li>下雪，下雨等粒子特效</li>
-<li>文字类游戏(ADV / AVG)支持</li>
-<li>自定义滤镜，自定义变换</li>
+<li>基于DirectShow的视频播放以及音乐播放：用户可以插入常用音视频文件，即可播放。</li>
+<li>脚本控制： 用户使用简单的脚本语言生成程序。</li>
+<li>数字图像处理滤镜效果：用户可以使用内嵌的滤镜对图片进行处理或动态处理，包括高斯滤波、风格化等。</li>
+<li>文字渲染特效：用户可以使用内嵌的文字特效对输入文字进行处理。</li>
+<li>基于关键位置的动画插值：用户可以使用设置图像在某时刻的关键属性，以产生动画效果。</li>
+<li>粒子特效：用户可以使用图片产生粒子效果，包括下雪，下雨等。</li>
+<li>可以制作简单文字类游戏：用户可使用按钮，脚本跳转，脚本分支等特性，制作简单的文字类游戏(ADV / AVG)。</li>
+<li>支持扩展插件：高级用户可以利用软件提供的API编写插件，以扩展软件的功能，包括自定义滤镜，自定义变换等。（暂不支持）</li>
 </ul>
 
-<p>当前SpeShow版本为 Beta 0.11.1 其源代码在<a href="https://github.com/denjones/spengine">Github</a>上。</p>
+<p>当前SpeShow版本为 Beta 0.9 实现了上面的大部分功能，其源代码在<a href="https://code.google.com/p/spengine/">Google Code</a>上。</p>
 
-			</div>	
+<p>如果您觉得以上文字晦涩难懂，请<a href="speshow_another.html">点击这里</a>翻译。</p>
+
+			</div>
 		</div>
 	</div>
 	<!-- /.container -->
@@ -207,6 +229,8 @@
 </body>
 
 
+
+
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
@@ -215,7 +239,7 @@
 
 <script type="text/javascript" src="/js/shBrushXML.js"></script>
 
-<script type="text/javascript" src="/js/shBrushJScript.js"></script>
+<script type="text/javascript" src="/js/shBrushKScript.js"></script>
 
 <script type="text/javascript" src="/js/highlight.js"></script>
 
