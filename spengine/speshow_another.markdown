@@ -5,7 +5,7 @@ title: SpeShow 是神马？ - SpeShow图文演示
 
 ##SpeShow 是神马？
                     
-![SpeShow]({{ root_url }}/images/Logo_SpeShow_Long_128.jpg)
+![SpeShow](/images/Logo_SpeShow_Long_128.jpg)
                     
 SpeShow是一个基于[SPENGINE DirectX 9.0c](spengine.html)的图文演示程序制作系统。SpeShow音近“Special”，独立而与众不同。
 

@@ -10,7 +10,7 @@ js:
 
 出品：
 
-- [SPRABBIT-超科学兔耳中队]({{ root_url }}/)
+- [SPRABBIT-超科学兔耳中队](/)
 
 主催：
 
@@ -40,7 +40,7 @@ js:
 
 引擎：
 
-- 使用 [SpeShow/SPENGINE]({{ root_url }}/spengine/index.html)
+- 使用 [SpeShow/SPENGINE](/spengine/index.html)
 
 编码：
 

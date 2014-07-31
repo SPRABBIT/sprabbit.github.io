@@ -5,7 +5,7 @@ title: SPENGINE - 游戏引擎 - 超科學兔耳中隊
 
 ##SPENGINE 简介
                     
-![SPENGINE]({{ root_url }}/images/spengine_s.png)
+![SPENGINE](/images/spengine_s.png)
                     
 SPENGINE是一个基于DirectX 9.0c的2.5D游戏引擎。首个使用该引擎制作的软件为[SpeShow图文演示](index.html)
                     

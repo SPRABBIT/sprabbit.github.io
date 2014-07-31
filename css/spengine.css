@@ -20,11 +20,13 @@
 
 .sidebar li.active>a {
 	border-right: solid 3px #1450a5;
+	color: #1450a5;
 }
 
 .sidebar>li a{
 	padding-top: 1px;
 	padding-bottom: 1px;
+	color: gray;
 }
 
 .sidebar>li>ul>li{
