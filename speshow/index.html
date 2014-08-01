@@ -6,8 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>SpeShow 简介 - SpeShow图文演示</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="同人游戏,同人社团,游戏引擎,Galgame,AVG,SpeShow,SPRABBIT,SPENGINE,galgame引擎" />
-	<meta name="description" content="同人社团SPRABBIT-超科学兔耳中队是一个专注于技术创新的中文同人社团" />
+	<meta name="keywords" content="Node.js,SpeShow,SpeShow.js,galgame引擎,AVG引擎,同人游戏,同人社团,游戏引擎,Galgame,AVG,SPRABBIT,SPENGINE" />
+	<meta name="description" content="SpeShow.js是一个基于DirectX的Node.js可视化程序构建方案、AVG引擎、图文演示程序脚本引擎" />
 
 	<link rel="icon" href="favicon.png">
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="/css/syntax.css">
 	<link rel="stylesheet" href="/css/custom.css">
 	<link rel="stylesheet" href="/css/shCore.css" type="text/css" />
-	<link rel="stylesheet" href="/css/shThemeMidnight.css" type="text/css" />
+	<link rel="stylesheet" href="/css/shThemeFadeToGrey.css" type="text/css" />
 	<link rel="stylesheet" href="/css/spengine.css" type="text/css" />
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +39,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/speshow/">简介</a>
 					</li>
-					<li><a href="/speshow/tutorial.html">教程</a>
+					<li><a href="/speshow/docs.html">文档</a>
 					</li>
 					<li><a href="/speshow/about.html">关于</a>
 					</li>
@@ -57,87 +57,140 @@
 	<li><a href="index.html">SpeShow.JS 简介</a>
 	</li>
 	<li>
-		<a href="tutorial.html">教程</a>
+		<a href="docs.html">文档</a>
 		<ul class="nav">
-			<li><a href="tutorial_deploy.html">部署 SpeShow</a>
+			<li>
+				<a href="quick_start.html">快速入门</a>
+			</li>
+			<li><a href="deployment.html">部署 SpeShow</a>
 			</li>
 			<li>
-				<a href="tutorial_kscript.html">JavaScript</a>
+				<a href="run_speshow.html">运行SpeShow</a>
 				<ul class="nav">
-					<li><a href="#tutorial_kscript_comment">Node.js</a>
+					<li><a href="run_speshow.html#config">配置文件</a>
 					</li>
-					<li><a href="#tutorial_kscript_include">include 函数</a>
+					<li><a href="run_speshow.html#init">入口文件</a>
 					</li>
-					<li><a href="#tutorial_kscript_speshow">JavaScript 与 SpeShow</a>
+					<li><a href="run_speshow.html#debug">调试模式</a>
 					</li>
 				</ul>
 			</li>
 			<li>
-				<a href="tutorial_standard.html">基本指令</a>
+				<a href="javascript.html">JavaScript</a>
 				<ul class="nav">
-					<li><a href="tutorial_standard_screen.html">屏幕</a>
+					<li><a href="javascript.html#node.js">Node.js</a>
 					</li>
-					<li><a href="tutorial_standard_component.html">基本UI组件</a>
-					</li>
-					<li><a href="tutorial_standard_textbox.html">文字框</a>
-					</li>
-					<li><a href="tutorial_standard_picturebox.html">图片框</a>
-					</li>
-					<li><a href="tutorial_standard_list.html">列表</a>
-					</li>
-					<li><a href="tutorial_standard_wait.html">等待</a>
-					</li>
-					<li><a href="tutorial_standard_exit.html">退出</a>
-					</li>
-					<li><a href="tutorial_standard_sample.html">示例</a>
+					<li><a href="javascript.html#speshow">SpeShow模块</a>
 					</li>
 				</ul>
 			</li>
 			<li>
-				<a href="tutorial_advanced.html">进阶指令</a>
+				<a href="speshow_module.html">SpeShow模块</a>
 				<ul class="nav">
-					<li><a href="tutorial_advanced_switch.html">切换</a>
+					<li><a href="speshow_module.html">脚本文件引入及跳转</a>
 					</li>
-					<li><a href="tutorial_advanced_sound.html">声音</a>
+					<li><a href="speshow_module.html">队列函数</a>
 					</li>
-					<li><a href="tutorial_advanced_video.html">视频</a>
+					<li><a href="speshow_module.html">系统变量与状态变量</a>
 					</li>
-					<li><a href="tutorial_advanced_effect.html">特效</a>
-					</li>
-					<li><a href="tutorial_advanced_animation.html">动画</a>
-					</li>
-					<li><a href="tutorial_advanced_particlesystem.html">粒子系统</a>
-					</li>
-					<li><a href="tutorial_advanced_capture.html">截图</a>
-					</li>
-					<li><a href="tutorial_advanced_save.html">存档</a>
-					</li>
-					<li><a href="tutorial_advanced_skip.html">跳过</a>
-					</li>
-					<li><a href="tutorial_advanced_texteffect.html">文字特效</a>
-					</li>
-					<li><a href="tutorial_advanced_dialogbox.html">AVG专用组件：对话框</a>
+					<li><a href="speshow_module.html">状态保存</a>
 					</li>
 				</ul>
 			</li>
 			<li>
-				<a href="tutorial_senior.html">高级指令</a>
+				<a href="script_type.html">脚本分类</a>
 				<ul class="nav">
-					<li><a href="tutorial_senior_pre.html">预执行脚本</a>
+					<li><a href="script_type.html#normal">一般脚本</a>
 					</li>
-					<li><a href="tutorial_senior_inner.html">内部脚本</a>
-					</li>
-					<li><a href="tutorial_senior_listener.html">事件响应脚本</a>
-					</li>
-					<li><a href="tutorial_senior_jump.html">跳转脚本</a>
+					<li><a href="script_type.html#queued">队列脚本</a>
 					</li>
 				</ul>
 			</li>
-			<li><a href="tutorial_professional.html">高级用途</a>
+			<li>
+				<a href="window.html">窗口</a>
+				<ul class="nav">
+					<li><a href="window.html#title">标题</a>
+					</li>
+					<li><a href="window.html#resize">窗口大小</a>
+					</li>
+					<li><a href="window.html#cursor">指针</a>
+					</li>
+					<li><a href="window.html#cursor">FPS</a>
+					</li>
+					<li><a href="window.html#onexit">退出事件</a>
+					</li>
+				</ul>
 			</li>
-			<li><a href="tutorial_commands.html">指令索引</a>
+			<li>
+				<a href="screen.html">屏幕</a>
+				<ul class="nav">
+					<li><a href="screen.html#focus">聚焦</a>
+					</li>
+					<li><a href="screen.html#root">根组件</a>
+					</li>
+					<li><a href="screen.html#capture">截图</a>
+					</li>
+					<li><a href="screen.html#create_component">创建组件</a>
+					</li>
+				</ul>
 			</li>
-			<li><a href="tutorial_sample.html">示例</a>
+			<li>
+				<a href="component.html">组件</a>
+				<ul class="nav">
+					<li><a href="component.html#normal">基本组件</a>
+					</li>
+					<li><a href="component.html#animation">动画</a>
+					</li>
+					<li><a href="component.html#effect">特效</a>
+					</li>
+					<li><a href="component.html#picturebox">图片框</a>
+					</li>
+					<li><a href="component.html#scroll">滚动框（列表）</a>
+					</li>
+					<li><a href="component.html#textbox">文字框</a>
+					</li>
+					<li><a href="component.html#dialogbox">AVG对话框</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="event.html">事件响应</a>
+				<ul class="nav">
+					<li><a href="event.html">事件传递</a>
+					</li>
+					<li><a href="event.html">事件处理</a>
+					</li>
+					<li><a href="event.html">事件类型</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="multimedia.html">多媒体</a>
+				<ul class="nav">
+					<li><a href="multimedia.html#sound">音频</a>
+					</li>
+					<li><a href="multimedia.html#video">视频</a>
+					</li>
+					<li><a href="multimedia.html#sprite">精灵动画</a>
+					</li>
+					<li><a href="multimedia.html#particle">粒子系统</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="advanced.html">进阶指南</a>
+				<ul class="nav">
+					<li><a href="advanced.html#customize_effect">自定义特效</a>
+					</li>
+					<li><a href="advanced.html#packing">打包资源文件</a>
+					</li>
+					<li><a href="advanced.html#customize_packing">修改打包加密方法</a>
+					</li>
+				</ul>
+			</li>
+			<li><a href="reference.html">索引</a>
+			</li>
+			<li><a href="sample.html">示例</a>
 			</li>
 		</ul>
 	</li>
@@ -158,7 +211,7 @@
 	</li>
 	<li> <a href="donate.html">捐赠</a>
 	</li>
-	<li> <a href="QA.html">FAQ</a>
+	<li> <a href="FAQ.html">FAQ</a>
 	</li>
 	<li class="warn-new-doc">
 		<a href="/spengine/">
@@ -178,7 +231,7 @@
 
 <p>通过使用Javascript语言编写一些程序，用户就可以使用自己的图片，以及输入自己的文字，为其添加动态特效，并得到最终演示程序。<a href="/spengine/">旧版SpeShow</a> 使用一种自定脚本KScript作为调用脚本，因为其专用性高，学习曲线长，理解成本高，所以新版的SpeShow.JS我们选用了WEB前后端都非常流行的Javascript作为脚本语言。<em>以后若不说明，SpeShow均指代新版的SpeShow.JS</em>，而非旧版(0.9及以下KS版本).</p>
 
-<p>主要功能及特点有：</p>
+<p>当前SpeShow版本为 Beta 0.11.1，主要功能及特点有：</p>
 
 <ul>
 <li>基于Node.js(ver 0.11.11)</li>
@@ -191,7 +244,10 @@
 <li>自定义滤镜，自定义变换</li>
 </ul>
 
-<p>当前SpeShow版本为 Beta 0.11.1 其源代码在<a href="https://github.com/denjones/spengine">Github</a>上。</p>
+<p><a class="btn btn-lg btn-primary" role="button" href="quick_start.html">快速入门</a> 
+<a class="btn btn-lg btn-primary" role="button" href="download.html">立即下载</a> 
+<a class="btn btn-lg btn-primary" role="button" href="docs.html">查看文档</a> 
+<a class="btn btn-lg btn-primary" role="button" href="https://github.com/denjones/spengine">查看源码</a></p>
 
 			</div>	
 		</div>
