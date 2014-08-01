@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>使用许可 - SpeShow图文演示</title>
+	<title>部署 SpeShow - SpeShow 文档</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="Node.js,SpeShow,SpeShow.js,galgame引擎,AVG引擎,同人游戏,同人社团,游戏引擎,Galgame,AVG,SPRABBIT,SPENGINE" />
 	<meta name="description" content="SpeShow.js是一个基于DirectX的Node.js可视化程序构建方案、AVG引擎、图文演示程序脚本引擎" />
@@ -229,27 +229,89 @@
 				</div>
 			</div>
 			<div class="col-md-9 content-main" role="main">
-				<h2>使用许可</h2>
+				<h2>部署 SpeShow</h2>
 
-<p>SpeShow 是中文同人团体 <a href="http://blog.sprabbit.com/about/">SPRABBIT-超科学兔耳中队</a> 的作品，因为部分代码引用了基于 <a href="http://www.gnu.org/copyleft/gpl.html">GPL协议</a> 的库文件，因此本软件遵从GPL协议开源，其开源代码在 <a href="https://github.com/denjones/spengine">Github</a> 上。</p>
-
-<h3>开发人员</h3>
-
-<p>若遇到bug可以直接在Github上建立Issue单，若希望对源代码进行维护，也可以直接在Github上进行Pull Request。若要引用本软件的代码，请遵从GPL协议。出于私自原因对 SpeShow/SPENGINE 进行各种形式的使用，修改，均<em>不</em>需要征得本社团同意，并且<em>不</em>需向本社团缴纳任何费用。</p>
-
-<h3>脚本编写人员</h3>
-
-<p>若只是编写脚本，脚本程序作为资源文件可以不遵从GPL，脚本等资源文件版权归原作者所有，原作者对其作品负有法律责任，本社团对任何修改后的作品不负任何责任。</p>
-
-<h3>其他条款</h3>
-
-<p>以下条款建议遵守但不强制要求：</p>
+<p>确保你下载了最新的 <a href="download.html">SpeShow 发行版</a> 压缩包，解压出来的文件夹中应该有如下文件：</p>
 
 <ul>
-<li>修改后的作品中或其他相关说明文件标注为 SpeShow 的衍生作品。</li>
-<li>使用任何方式通知我们您的作品使用了 SpeShow。</li>
-<li>使用任何方式通知我们您在使用 SpeShow 过程中遇到的 Bug。</li>
+<li><code>/bin/</code> 二进制文件，以及相关脚本资源文件</li>
+<li><code>/SSLauncher.exe</code> 以一般模式运行SpeShow程序，主要针对使用者</li>
+<li><code>/SSDebug.exe</code> 以调试模式运行SpeShow程序，打开控制台</li>
 </ul>
+
+<p>其中 <code>/bin/</code> 目录下还有这些文件：</p>
+
+<ul>
+<li><code>/bin/</code>
+
+<ul>
+<li><code>/effect/</code> 特效HLSL文件夹</li>
+<li><code>/mask/</code> 遮罩图片文件夹</li>
+<li><code>/mix/</code> 图像混合HLSL文件夹</li>
+<li><code>/trans/</code> 图像变换HLSL文件夹</li>
+<li><code>*.dll</code> 引用的库文件</li>
+<li><code>config.cfg</code> 配置文件</li>
+<li><code>init.js</code> 入口脚本文件</li>
+<li><code>SpeShow.exe</code> SpeShow主程序</li>
+</ul></li>
+</ul>
+
+<h3 id="init">入口文件</h3>
+
+<p>SSLauncher 和 SSDebug 实际上都是调用<code>/bin/</code>目录下的 <code>SpeShow.exe</code> 文件来执行程序，执行SpeShow.exe 可以带有以下参数：</p>
+
+<ul>
+<li>-d 开启调试模式</li>
+<li>-l 开启Log</li>
+<li>&gt;2 脚本错误输出文件</li>
+</ul>
+
+<p>SSLauncher实际上是直接打开SpeShow.exe，而SSDebug则是以以下参数打开SpeShow.exe：</p>
+
+<pre class="brush:js">
+    SpeShow.exe -d -l 2> log/script.log
+</pre>
+
+<p>这里 <code>2&gt; log/script.log</code> 的意思是将Node.js的错误信息输出到 <code>log/script.log</code> 文件中，换而言之如果你执行脚本过程中遇到问题，可以去查看一下这个文件中是否有内容，一般该文件中会包含错误发生的位置信息。</p>
+
+<p>如果 <code>bin</code> 文件夹中包含 <code>init.js</code> 文件，运行后SpeShow后，SpeShow将做一些读取以及初始化工作，然后执行 <code>init.js</code> 中的脚本，也即是 <code>init.js</code> 脚本就是整个程序的入口。</p>
+
+<h3 id="debug">调试模式</h3>
+
+<p>使用SSDebug，或者使用 <code>-d</code> 参数打开SpeShow.exe可以调试模式运行SpeShow。以调试模式运行时，除了打开主窗口，还会打开一个命令行窗口，这是一个Node.js的Shell，可以直接在其中输入执行JS脚本，或查看实时变量值。</p>
+
+<h3 id="config">配置文件</h3>
+
+<p>在执行 SpeShow 之前，您还可以设置一些程序的初始化参数。使用记事本打开 <code>config.cfg</code> 文件，其内容大概如下:</p>
+
+<pre class="brush:xml">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Config>
+        <WindowWidth>800</WindowWidth>
+        <WindowHeight>450</WindowHeight>
+        <WorkingWidth>1280</WorkingWidth>
+        <WorkingHeight>720</WorkingHeight>
+        <MultisampleType>0</MultisampleType>
+        <MultisampleLevel>0</MultisampleLevel>
+        <RefreshRate>0</RefreshRate>
+        <Windowed>true</Windowed>
+        <VSync>true</VSync>
+        <DeviceType>1</DeviceType>
+        <Debug>true</Debug>
+    </Config>
+</pre>
+
+<p>您可以更改其中的数值，程序运行时会根据这些数据初始化引擎。</p>
+
+<p>参数说明如下：</p>
+
+<table><tr><th>属性名</th><th>值类型</th><th>说明</th></tr><tr><td>WindowWidth</td><td>数字</td><td>窗口宽度。</td></tr><tr><td>WindowHeight</td><td>数字</td><td>窗口高度。</td></tr><tr><td>WorkingWidth</td><td>数字</td><td>画布的宽度，编写脚本时以此为准。</td></tr><tr><td>WorkingHeight</td><td>数字</td><td>画布的高度，编写脚本时以此为准。</td></tr><tr><td>MultisampleType</td><td>数字</td><td>多重采样的类型，可以是0-8之间的数值，会影响图像显示质量。但若超过硬件能力，程序将运行失败。建议设置为0。</td></tr><tr><td>MultisampleLevel</td><td>数字</td><td>多重采样的级别，级别数值不得大于多重采样类型的数值。</td></tr><tr><td>RefreshRate</td><td>数字</td><td>屏幕刷新率，设置为0则为当前的屏幕刷新率。</td></tr><tr><td>Windowed</td><td>布尔值</td><td>窗口模式，若为true，则为窗口化显示，若为false，则为全屏显示。</td></tr><tr><td>VSync</td><td>布尔值</td><td>垂直同步，若为true则为打开，false则为关闭。</td></tr><tr><td>DeviceType</td><td>数字</td><td>DirectX设备类型，1为硬件设备，2为软件设备。建议为1。</td></tr><tr><td>Debug</td><td>布尔值</td><td>是否输出调试log。</td></tr></table>                 
+
+<hr>
+
+<p>上一节：<a href="quick_start.html">快速入门</a></p>
+
+<p>下一节： <a href="javascript.html">JavaScript</a></p>
 
 			</div>	
 		</div>

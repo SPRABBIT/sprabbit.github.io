@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>使用许可 - SpeShow图文演示</title>
+	<title>JavaScript - SpeShow 文档</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="Node.js,SpeShow,SpeShow.js,galgame引擎,AVG引擎,同人游戏,同人社团,游戏引擎,Galgame,AVG,SPRABBIT,SPENGINE" />
 	<meta name="description" content="SpeShow.js是一个基于DirectX的Node.js可视化程序构建方案、AVG引擎、图文演示程序脚本引擎" />
@@ -229,27 +229,46 @@
 				</div>
 			</div>
 			<div class="col-md-9 content-main" role="main">
-				<h2>使用许可</h2>
+				<h2>JavaScript</h2>
 
-<p>SpeShow 是中文同人团体 <a href="http://blog.sprabbit.com/about/">SPRABBIT-超科学兔耳中队</a> 的作品，因为部分代码引用了基于 <a href="http://www.gnu.org/copyleft/gpl.html">GPL协议</a> 的库文件，因此本软件遵从GPL协议开源，其开源代码在 <a href="https://github.com/denjones/spengine">Github</a> 上。</p>
-
-<h3>开发人员</h3>
-
-<p>若遇到bug可以直接在Github上建立Issue单，若希望对源代码进行维护，也可以直接在Github上进行Pull Request。若要引用本软件的代码，请遵从GPL协议。出于私自原因对 SpeShow/SPENGINE 进行各种形式的使用，修改，均<em>不</em>需要征得本社团同意，并且<em>不</em>需向本社团缴纳任何费用。</p>
-
-<h3>脚本编写人员</h3>
-
-<p>若只是编写脚本，脚本程序作为资源文件可以不遵从GPL，脚本等资源文件版权归原作者所有，原作者对其作品负有法律责任，本社团对任何修改后的作品不负任何责任。</p>
-
-<h3>其他条款</h3>
-
-<p>以下条款建议遵守但不强制要求：</p>
+<p>JavaScript 是一种广泛应用于Web前后端的编程语言，SpeShow 0.11 版本以后，我们选择 JavaScript 作为脚本语言，并使用 Node.js 作为平台，以便提供更多的可能性。我们选择JavaScript以及Node.js是基于以下理由：</p>
 
 <ul>
-<li>修改后的作品中或其他相关说明文件标注为 SpeShow 的衍生作品。</li>
-<li>使用任何方式通知我们您的作品使用了 SpeShow。</li>
-<li>使用任何方式通知我们您在使用 SpeShow 过程中遇到的 Bug。</li>
+<li><code>学习曲线短</code>，大部分对JavaScript有一定认识的人员可以马上切入SpeShow开发</li>
+<li><code>与DOM操作契合度高</code>，SpeShow的UI渲染是基于一种类似DOM树的组件对象模型</li>
+<li><code>异步单线程</code>，天生的适合事件响应式图形界面开发</li>
+<li><code>流行的平台</code>，可以使用丰富的Node.js模块资源，实现更多意想不到的功能</li>
+<li><code>执行效率高</code>，基于Google V8 JS引擎</li>
+<li><code>学习成本低</code>，就算你以后不用SpeShow，你也学会了JavaScript和Node.js，不会是无用功</li>
 </ul>
+
+<p>如果你对JavaScript不熟悉，建议到 <a href="http://www.w3school.com.cn">W3School</a> 查看 <a href="http://www.w3school.com.cn/js/index_pro.asp">JavaScript / EcmaScript 相关语法教程</a> 即可。</p>
+
+<h3 id="node.js">Node.js</h3>
+
+<p><a href="http://www.nodejs.org">Node.js</a> 是一个可以快速构建网络服务及应用的平台。它对Google V8引擎进行了封装，使得 JavaScript 得以走出浏览器，成为一种前后端通用的编程语言。现在，无论是前端开发设计人员，或是后端逻辑数据开发人员都已离不开 Node.js，也因此有了一大批基于 Node.js 的模块及应用。</p>
+
+<p>基于这样一个平台，也便于 SpeShow 获取他的优势，让开发更加自由，让开发者可以开发出更加多功能，更加强大的桌面图文演示类应用。</p>
+
+<p>如果你对Node.js不熟悉，也可以继续使用SpeShow，只有到你需要自己编写模块，或者需要调用一些系统模块时，需要参考一下 <a href="http://www.w3cschool.cc/nodejs/nodejs-module-system.html">Node.js的模块教程</a>，完整教程也可以直接当 <a href="http://www.w3cschool.cc/nodejs/nodejs-tutorial.html">W3CSchool.cc</a>查看</p>
+
+<h3 id="speshow_mod">SpeShow 模块</h3>
+
+<p>SpeShow 中集成整个 Node.js 的核心代码，让 js 文件无需配置便可以直接在 SpeShow 中运行。同时，SpeShow 作为一个 Node.js 模块暴露给脚本，以便于脚本调用 SpeShow 接口以及操作UI组件对象。</p>
+
+<p>由于 SpeShow 是一个内嵌模块，所以获取他的方式跟普通的不一样，不是使用 <code>require</code> 而需要使用进程绑定：</p>
+
+<pre class="brush:js">
+    var ss = process.binding('speshow');
+</pre>
+
+<p>关于该模块的一些属性及方法会在下一节介绍。</p>
+
+<hr>
+
+<p>上一节：<a href="deployment.html">部署 SpeShow</a></p>
+
+<p>下一节： <a href="speshow_module.html">SpeShow 模块</a></p>
 
 			</div>	
 		</div>
