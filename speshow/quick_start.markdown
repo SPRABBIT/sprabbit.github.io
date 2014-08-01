@@ -1,6 +1,6 @@
 ---
 layout: speshow
-title: 快速入门 - SpeShow图文演示
+title: 快速入门 - SpeShow 文档
 ---
 
 ##快速入门
@@ -17,7 +17,7 @@ title: 快速入门 - SpeShow图文演示
 
 但是作为一个编写脚本的人，没错你不应该打开SSLauncher而应该打开SSDebug，这会在打开窗口之余打开一个控制台。如果你会JavaScript（以下简称JS），那么你可以直接在控制台输入JS脚本，因为这其实就是一个Node.js的Shell。如果你不会JS也没关系，去学就是了。那么在你去学之前你也可以跟着这个入门来试着输入一些JS代码看看效果。
 
-###Hello World
+<h3 id="hello_world">Hello World</h3>
 
 第一个程序当然就是Hello World了，那么在控制台输入以下语句：
 
@@ -41,7 +41,7 @@ title: 快速入门 - SpeShow图文演示
 
 然后你会发现窗口还是没变化。真的没变化吗？仔细看窗口标题，窗口标题已经变成刚刚输入的 `Hello World!` 了。
 
-###组件 Hello World
+<h3 id="hello_component">Hello 组件</h3>
 
 你应该还觉得不够Cool，应该将 Hello World 显示在窗口里面，没问题，虽然你可能不太明白接下来的代码，但是先输着玩也是不错的体验。
 
@@ -78,7 +78,7 @@ title: 快速入门 - SpeShow图文演示
 
 是不是很Cool。
 
-###脚本文件 Hello World
+<h3 id="hello_file">Hello 脚本文件</h3>
 
 你可能觉得一行一行输这些代码太麻烦了，没问题，打开 `/bin/` 文件夹，在里面找到 `init.js` 文件，如果没有就手动创建一个，然后把以上代码全数拷贝到文件中保存（最好存成UTF-8文件）。
 
@@ -122,4 +122,5 @@ title: 快速入门 - SpeShow图文演示
 ***********************************************************************
 
 上一节：[文档](docs.html)
-下一节: [部署SpeShow](deployment.html)
+
+下一节：[部署SpeShow](deployment.html)

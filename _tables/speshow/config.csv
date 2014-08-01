@@ -1,0 +1,12 @@
+属性名,值类型,说明
+WindowWidth,数字,窗口宽度。
+WindowHeight,数字,窗口高度。
+WorkingWidth,数字,画布的宽度，编写脚本时以此为准。
+WorkingHeight,数字,画布的高度，编写脚本时以此为准。
+MultisampleType,数字,多重采样的类型，可以是0-8之间的数值，会影响图像显示质量。但若超过硬件能力，程序将运行失败。建议设置为0。
+MultisampleLevel,数字,多重采样的级别，级别数值不得大于多重采样类型的数值。
+RefreshRate,数字,屏幕刷新率，设置为0则为当前的屏幕刷新率。
+Windowed,布尔值,窗口模式，若为true，则为窗口化显示，若为false，则为全屏显示。
+VSync,布尔值,垂直同步，若为true则为打开，false则为关闭。
+DeviceType,数字,DirectX设备类型，1为硬件设备，2为软件设备。建议为1。
+Debug,布尔值,是否输出调试log。

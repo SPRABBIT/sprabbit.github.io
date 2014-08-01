@@ -5,7 +5,7 @@ $(function() {
 		var href = a.attr('href');
 		var location = window.location.href;
 		if(location.indexOf(href) >= 0){
-			a.parent().addClass('active');
+			a.parents('li').addClass('active');
 			a.parents().show();
 			a.next().show();
 			break;
