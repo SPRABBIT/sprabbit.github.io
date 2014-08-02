@@ -23,13 +23,13 @@ title: 下载 SpeShow - SpeShow图文演示
 
 当前发行的版本罗列如下：
 
- - 2014-08-03 [SpeShow v0.11.1 Beta](#speshow_v_0.11.1) *NEW*
+ - 2014-08-03 [SpeShow v0.11.0 Beta](#speshow_v_0.11.0) *NEW*
  
 更多早期版本请[查看KS版本下载](/spengine/download.html)。
 
 *****************************************************************************
 
-<h3 id="speshow_v_0.11.1">Version 0.11.1 Beta</h3>
+<h3 id="speshow_v_0.11.0">Version 0.11.0 Beta</h3>
 
 本版较上一版本（0.9）有较大改变，主要是脚本语言的变更，以及改进了整个引擎的运行逻辑，因此本版作为新的基础版本发行，这里不记录相对上一版本的新增功能以及bug修复情况。
 
@@ -37,5 +37,9 @@ title: 下载 SpeShow - SpeShow图文演示
 
 下载：
 
- - SpeShow 0.11.1：暂未开放
- - SpeShow 0.11.1 以及示例（《Sicily 序章》 ）：暂未开放
+ - SpeShow 0.11.0：[GitHub](https://github.com/denjones/spengine/releases/download/v0.11.0/SpeShow.0.11.zip) [百度网盘](http://pan.baidu.com/s/1bnaT0kf)
+ - SpeShow 0.11.0 以及示例（《Sicily 序章》 ）：暂未开放
+
+***********************************************************************
+
+{% include uyan.html %}

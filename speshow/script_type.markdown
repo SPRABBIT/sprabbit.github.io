@@ -10,3 +10,7 @@ title: 脚本分类 - SpeShow 文档
 上一节：[SpeShow 模块](speshow_module.html)
 
 下一节：[窗口](window.html)
+
+***********************************************************************
+
+{% include uyan.html %}

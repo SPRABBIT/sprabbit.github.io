@@ -124,3 +124,7 @@ title: 快速入门 - SpeShow 文档
 上一节：[文档](docs.html)
 
 下一节：[部署SpeShow](deployment.html)
+
+***********************************************************************
+
+{% include uyan.html %}
