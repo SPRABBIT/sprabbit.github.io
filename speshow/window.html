@@ -97,7 +97,7 @@
 					</li>
 					<li><a href="#queue_func">队列函数</a>
 					</li>
-					<li><a href="#variable_type">系统变量与状态变量</a>
+					<li><a href="#variable_type">系统变量与屏幕变量</a>
 					</li>
 					<li><a href="#state_saving">状态保存</a>
 					</li>
@@ -231,7 +231,74 @@
 			<div class="col-md-9 content-main" role="main">
 				<h2>窗口</h2>
 
-<p>文档待更新</p>
+<p>SpeShow 对象有一个 <code>window</code> 属性，它代表演示程序所在的窗口，通过修改该 <code>window</code> 的属性或调用其方法，可以在一定程度上对该窗口进行操作。</p>
+
+<hr>
+
+<h3 id="title">标题</h3> 
+
+<p>使用 <code>window</code> 对象的 <code>title</code> 属性可以设置或获取窗口的标题：</p>
+
+<pre class="brush:js">
+    ss.window.title;
+    ss.window.title = 'New Title';
+</pre>
+
+<hr>
+
+<h3 id="resize">窗口大小</h3> 
+
+<p>通过 <code>window</code> 对象的 <code>width</code> 属性，可以获取或设置窗口的宽度：</p>
+
+<pre class="brush:js">
+    ss.window.width;
+    ss.window.width = 1024;
+</pre>
+
+<p>通过 <code>window</code> 对象的 <code>height</code> 属性，可以获取或设置窗口的高度：</p>
+
+<pre class="brush:js">
+    ss.window.height;
+    ss.window.height = 728;
+</pre>
+
+<p>通过 <code>window</code> 对象的 <code>resize</code> 方法，可以直接设置窗口的大小：</p>
+
+<pre class="brush:js">
+    ss.window.resize(width, height);
+</pre>
+
+<hr>
+
+<h3 id="cursor">指针</h3> 
+
+<p>通过 <code>window</code> 对象的 <code>cursor</code> 属性，可以设置鼠标指针：</p>
+
+<pre class="brush:js">
+    ss.window.cursor = 'cursor/pointer.ani';
+</pre>
+
+<hr>
+
+<h3 id="fps">FPS</h3> 
+
+<p>通过 <code>window</code> 对象的 <code>fps</code> 属性，可以调整帧率的显示，其中 <code>fps</code> 对象的属性如下：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>默认值</th><th>描述</th></tr><tr><td>display</td><td>布尔值</td><td>true</td><td>是否显示帧率。</td></tr><tr><td>position</td><td>字符串</td><td>'RightBottom'</td><td>帧率显示位置，只能是以下之一：<ul><li>'LeftTop'</li><li>'RightTop'</li><li>'LeftBottom'</li><li>'RightBottom'</li></ul></td></tr><tr><td>lock</td><td>整数</td><td>0</td><td>锁定帧率数，0即不锁帧率。</td></tr></table>
+
+<hr>
+
+<h3 id="onexit">退出事件</h3> 
+
+<p>通过设置 <code>window</code> 对象的 <code>onExit</code> 属性为一个函数，可以使之在程序退出前执行：</p>
+
+<pre class="brush:js">
+    ss.window.onExit = function(e){
+        return true;
+    };
+</pre>
+
+<p>若改函数返回 <code>false</code>，则程序不会退出。</p>
 
 <hr>
 

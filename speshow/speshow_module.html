@@ -97,7 +97,7 @@
 					</li>
 					<li><a href="#queue_func">队列函数</a>
 					</li>
-					<li><a href="#variable_type">系统变量与状态变量</a>
+					<li><a href="#variable_type">系统变量与屏幕变量</a>
 					</li>
 					<li><a href="#state_saving">状态保存</a>
 					</li>
@@ -231,49 +231,177 @@
 			<div class="col-md-9 content-main" role="main">
 				<h2>SpeShow 模块</h2>
 
-<p>文档待更新</p>
+<p>在JS脚本中，用户通过 SpeShow 模块来调用 SpeShow 的接口，引用SpeShow模块的写法如下：</p>
 
 <pre class="brush:js">
     var ss = process.binding('speshow');
 </pre>
 
+<p>这句代码所做的是绑定 SpeShow 模块到变量 <code>ss</code> 中，这样我们就可以通过变量 <code>ss</code> 来调用 SpeShow 的接口，当然你也可以使用别的变量名，但是下文默认使用 <code>ss</code> 作为 SpeShow 模块变量。</p>
+
+<p>下面介绍 SpeShow 模块的几个基本接口。</p>
+
+<hr>
+
 <h3 id="jump">脚本文件引入及跳转</h3>
+
+<p>在 SpeShow 中除了可以像 Node.js 那样引用模块文件外，SpeShow 模块还提供了引用其他脚本文件的方法。</p>
+
+<h4>include</h4>
+
+<p>include 方法用于直接引入另一个脚本文件的内容，相当于将另一个文件的代码插入到当前位置，类似于执行一个函数。注意引用文件的路径为相对路径，即相对于 <code>SpeShow.exe</code> 的路径，如 <code>init.js</code>、<code>script/logo.js</code> 等。</p>
+
+<h5>用法</h5>
 
 <pre class="brush:js">
     ss.include('filename');
 </pre>
 
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>filename</td><td>字符串</td><td>是</td><td>无</td><td>需要引入的文件的相对路径。</td></tr></table>
+
+<h4>goto</h4>
+
+<p>goto 方法用于跳转到另一个文件，换而言之将跳出当前作用域，并重新运行一个新的文件。跳转指令一般用于队列脚本，有关队列脚本的介绍请查看 <a href="script_type.html">脚本分类</a> 章节。</p>
+
+<h5>用法</h5>
+
 <pre class="brush:js">
     ss.goto({file: 'filename', tag: 'tagname');
 </pre>
 
-<h3 id="queue_func">队列函数</h3>
+<h5>参数</h5>
+
+<p>该方法的参数为一个对象，其属性值为：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>file</td><td>字符串</td><td>是</td><td>无</td><td>需要跳转的文件的相对路径。</td></tr><tr><td>tag</td><td>字符串</td><td>否</td><td>无</td><td>需要跳转的文件中的标签名。</td></tr></table>
+
+<h4>addTag</h4>
+
+<p>addTag 方法用于在队列脚本中插入一个标签，插入标签后使用 <code>goto</code> 方法可以直接跳转到标签位置，而省略标签之前的队列脚本。</p>
+
+<h5>用法</h5>
 
 <pre class="brush:js">
-    ss.addCommand([Function]);
+    ss.addTag(tagname);
 </pre>
 
-<h3 id="variable_type">系统变量与状态变量</h3>
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>tagname</td><td>字符串</td><td>是</td><td>无</td><td>标签名。</td></tr></table>
+
+<hr>
+
+<h3 id="queue_func">队列函数</h3>
+
+<p>队列函数是一些需要按顺序执行的函数，有关队列脚本的介绍请查看 <a href="script_type.html">脚本分类</a> 章节。</p>
+
+<h4>addCommand</h4>
+
+<p>通过接口 <code>addCommand</code> 来添加一个队列函数。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    ss.addCommand(func);
+</pre>
+
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>func</td><td>函数</td><td>是</td><td>无</td><td>需要按顺序执行的一个函数。</td></tr></table>
+
+<hr>
+
+<h3 id="variable_type">系统变量与屏幕变量</h3>
+
+<p>一般使用 <code>var</code> 声明的变量，在程序退出后便会丢失，如果需要持久化某些数据，则需要使用系统变量或状态变量。</p>
+
+<h4>sysVar</h4>
+
+<p>系统变量指的是程序退出后，再重新加载不会丢失的变量。实际上系统变量是通过将值赋给 <code>ss.sysVar</code> 对象的属性来实现保存的。通过使用后面提到的状态保存方法，可以实现重启程序后数据不丢失。</p>
+
+<h5>用法</h5>
 
 <pre class="brush:js">
     ss.sysVar.[VariableName] = [Value];
 </pre>
 
+<h4>屏幕变量</h4>
+
+<p>屏幕变量是指与屏幕相关的变量，屏幕的相关介绍请查看 <a href="screen.html">屏幕文档</a>。屏幕变量是通过将值赋给屏幕对象的属性来实现的，然后使用后面的状态保存方法，可以做到保存屏幕变量，使得读取状态后屏幕对象仍包含该属性。</p>
+
+<h5>用法</h5>
+
 <pre class="brush:js">
     ss.screen.[VariableName] = [Value];
 </pre>
 
+<hr>
+
 <h3 id="state_saving">状态保存</h3>
 
-<pre class="brush:js">
-    ss.saveState();
-    ss.loadState();
-</pre>
+<p>状态保存或恢复通过使用以下方法实现。</p>
+
+<h4>saveSystemData</h4>
+
+<p>保存系统状态，该方法会保存 <code>ss.sysVar</code> 对象，以及脚本的已读标记。</p>
+
+<h5>用法</h5>
 
 <pre class="brush:js">
-    ss.saveSystemData();
-    ss.loadSystemData();
+    ss.saveSystemData(filename);
 </pre>
+
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>filename</td><td>字符串</td><td>是</td><td>'system.dat'</td><td>需要保存的目标文件名。</td></tr></table>
+
+<h4>loadSystemData</h4>
+
+<p>读取系统状态，该方法会读取 <code>ss.sysVar</code> 对象，以及脚本的已读标记。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    ss.loadSystemData(filename);
+</pre>
+
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>filename</td><td>字符串</td><td>是</td><td>'system.dat'</td><td>需要读取的目标文件名。</td></tr></table>
+
+<h4>saveState</h4>
+
+<p>保存屏幕状态，该方法会保存屏幕对象。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    ss.saveState(opt);
+</pre>
+
+<h5>参数</h5>
+
+<p>其中若opt为字符串，则将所有屏幕保存到该字符串的文件中。</p>
+
+<p>若opt为对象，则其属性为：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>file</td><td>字符串</td><td>否</td><td>'state.dat'</td><td>保存的目标文件名。</td></tr><tr><td>screen</td><td>字符串</td><td>否</td><td>空</td><td>保存的屏幕id，多个id用半角逗号分隔。</td></tr></table>
+
+<h4>loadState</h4>
+
+<p>读取屏幕状态，该方法会读取屏幕对象。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    ss.loadState(filename);
+</pre>
+
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>filename</td><td>字符串</td><td>否</td><td>'state.dat'</td><td>读取的目标文件名。</td></tr></table>
 
 <hr>
 
