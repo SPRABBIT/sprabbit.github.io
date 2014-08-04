@@ -1,0 +1,4 @@
+名称,类型,默认值,描述
+display,布尔值,true,是否显示帧率。
+position,字符串,'RightBottom',帧率显示位置，只能是以下之一：<ul><li>'LeftTop'</li><li>'RightTop'</li><li>'LeftBottom'</li><li>'RightBottom'</li></ul>
+lock,整数,0,锁定帧率数，0即不锁帧率。
