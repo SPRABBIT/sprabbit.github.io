@@ -130,32 +130,32 @@
 			<li>
 				<a href="screen.html">屏幕</a>
 				<ul class="nav">
-					<li><a href="screen.html#focus">聚焦</a>
+					<li><a href="#root">根组件</a>
 					</li>
-					<li><a href="screen.html#root">根组件</a>
+					<li><a href="#focus">聚焦</a>
+					</li>					
+					<li><a href="#capture">截图</a>
 					</li>
-					<li><a href="screen.html#capture">截图</a>
-					</li>
-					<li><a href="screen.html#create_component">创建组件</a>
+					<li><a href="#create_component">创建组件</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="component.html">组件</a>
 				<ul class="nav">
-					<li><a href="component.html#normal">基本组件</a>
+					<li><a href="#normal_component">基本组件</a>
 					</li>
-					<li><a href="component.html#animation">动画</a>
+					<li><a href="#animation">动画</a>
 					</li>
-					<li><a href="component.html#effect">特效</a>
+					<li><a href="#effect">特效</a>
 					</li>
-					<li><a href="component.html#picturebox">图片框</a>
+					<li><a href="#picturebox">图片框</a>
 					</li>
-					<li><a href="component.html#scroll">滚动框（列表）</a>
+					<li><a href="#scroll">滚动框（列表）</a>
 					</li>
-					<li><a href="component.html#textbox">文字框</a>
+					<li><a href="#textbox">文字框</a>
 					</li>
-					<li><a href="component.html#dialogbox">AVG对话框</a>
+					<li><a href="#dialogbox">AVG对话框</a>
 					</li>
 				</ul>
 			</li>
@@ -231,7 +231,77 @@
 			<div class="col-md-9 content-main" role="main">
 				<h2>屏幕</h2>
 
-<p>文档待更新</p>
+<p>屏幕是容纳UI组件的基本单位，一切可视化的组件都只能在屏幕展示，类似于一张画布。使用 SpeShow 方法 <code>createScreen</code> 可以创建一个屏幕：</p>
+
+<pre class="brush:js">
+    var screen = ss.createScreen(opt);
+</pre>
+
+<p>其中 <code>opt</code> 为配置对象，其属性可以为下值：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>id</td><td>字符串</td><td>是</td><td>无</td><td>屏幕的ID，应用中只允许存在一个该ID的屏幕。</td></tr><tr><td>popUp</td><td>布尔值</td><td>否</td><td>false</td><td>屏幕是否为弹窗，若为弹窗，则其后面的屏幕将被绘制，否则不绘制其后面的屏幕。</td></tr><tr><td>backgroundColor</td><td>十六进制数</td><td>否</td><td>0x00000000</td><td>屏幕的背景色。</td></tr></table>
+
+<p>函数返回一个 <code>screen</code> 对象，他有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>只读</th><th>描述</th></tr><tr><td>id</td><td>字符串</td><td>否</td><td>获取或是设置屏幕的ID，应用中只允许存在一个该ID的屏幕。</td></tr><tr><td>popUp</td><td>布尔值</td><td>否</td><td>获取或设置屏幕是否为弹窗，若为弹窗，则其后面的屏幕将被绘制，否则不绘制其后面的屏幕。</td></tr><tr><td>backgroundColor</td><td>十六进制数</td><td>否</td><td>读取或设置屏幕的背景色。</td></tr><tr><td>root</td><td>组件对象</td><td>是</td><td>获取组件树的根节点。</td></tr></table>
+
+<p>创建完毕后可以使用 SpeShow 方法 <code>getScreenById</code> 方法来获取一个已知id的屏幕：</p>
+
+<pre class="brush:js">
+    var screen = ss.getScreenById(id);
+</pre>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>id</td><td>字符串</td><td>是</td><td>无</td><td>需要获取的屏幕的ID。</td></tr></table>
+
+<hr>
+
+<h3 id="root">根组件</h3>
+
+<p>Screen 对象的 <code>root</code> 属性是一个基本UI组件对象，他代表了整个屏幕组件树的根节点，类似于HTML的document节点，只有该组件的后代组件才会被绘制到屏幕上。有关UI组件可参看 <a href="component.html">组件文档</a>。</p>
+
+<hr>
+
+<h3 id="focus">聚焦</h3>
+
+<p>一般来说，如果存在多个 Screen ，那么只有位于顶部的 Screen 才会被显示（PopUp除外）。Screen 对象提供一个 <code>focus</code> 方法，来让该 Screen 被提前到所有屏幕的顶部：</p>
+
+<pre class="brush:js">
+    screen.focus();
+</pre>
+
+<hr>
+
+<h3 id="capture">截图</h3>
+
+<p>使用 Screen 的 <code>capture</code> 方法可以将 Screen 当前显示的内容截取到图像文件中保存：</p>
+
+<pre class="brush:js">
+    screen.capture(opt);
+</pre>
+
+<p>若 <code>opt</code> 为字符串，则屏幕将截图保存为该路径的文件。若 <code>opt</code> 为对象，则其可以有下列属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>file</td><td>字符串</td><td>是</td><td>无</td><td>目标图像文件的相对路径。</td></tr></table>
+
+<p>本方法支持保存为 <code>jpg</code>、<code>png</code>、<code>bmp</code> 等主流图形格式。</p>
+
+<hr>
+
+<h3 id="create_component">创建组件</h3>
+
+<p>使用 Screen 对象的 <code>createComponent</code> 方法可以创建并返回一个UI组件：</p>
+
+<pre class="brush:js">
+    var com = screen.createComponent(opt);
+</pre>
+
+<p>其中 <code>opt</code> 的属性出了可以指定 <code>type</code> 属性为特定UI组件类型外，其他属性与UI组件的属性一致，而UI组件的相关属性在 <a href="component.html">组件文档</a> 中有详细的介绍。</p>
+
+<p>除此之外，还可以用 <code>getComponentById</code> 方法获取一个特定ID的组件对象：</p>
+
+<pre class="brush:js">
+    var com = screen.getComponentById(id);
+</pre>
 
 <hr>
 

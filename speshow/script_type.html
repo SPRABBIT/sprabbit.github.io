@@ -130,32 +130,32 @@
 			<li>
 				<a href="screen.html">屏幕</a>
 				<ul class="nav">
-					<li><a href="screen.html#focus">聚焦</a>
+					<li><a href="#root">根组件</a>
 					</li>
-					<li><a href="screen.html#root">根组件</a>
+					<li><a href="#focus">聚焦</a>
+					</li>					
+					<li><a href="#capture">截图</a>
 					</li>
-					<li><a href="screen.html#capture">截图</a>
-					</li>
-					<li><a href="screen.html#create_component">创建组件</a>
+					<li><a href="#create_component">创建组件</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="component.html">组件</a>
 				<ul class="nav">
-					<li><a href="component.html#normal">基本组件</a>
+					<li><a href="#normal_component">基本组件</a>
 					</li>
-					<li><a href="component.html#animation">动画</a>
+					<li><a href="#animation">动画</a>
 					</li>
-					<li><a href="component.html#effect">特效</a>
+					<li><a href="#effect">特效</a>
 					</li>
-					<li><a href="component.html#picturebox">图片框</a>
+					<li><a href="#picturebox">图片框</a>
 					</li>
-					<li><a href="component.html#scroll">滚动框（列表）</a>
+					<li><a href="#scroll">滚动框（列表）</a>
 					</li>
-					<li><a href="component.html#textbox">文字框</a>
+					<li><a href="#textbox">文字框</a>
 					</li>
-					<li><a href="component.html#dialogbox">AVG对话框</a>
+					<li><a href="#dialogbox">AVG对话框</a>
 					</li>
 				</ul>
 			</li>
@@ -260,6 +260,8 @@
 <table><tr><th>名称</th><th>类型</th><th>默认值</th><th>描述</th></tr><tr><td>refresh</td><td>布尔值</td><td>true</td><td>函数执行完后是否需要刷新屏幕。</td></tr><tr><td>repeat</td><td>布尔值</td><td>false</td><td>函数执行后是否需要再重复执行一次。</td></tr><tr><td>read</td><td>布尔值</td><td>false</td><td>该函数是否已被执行过（全局）。</td></tr></table>
 
 <p>除了可以按顺序执行外，队列函数还支持跳过，使用 addTag 添加标签后用 goto 语句可以忽略该标签前的所有队列函数，直接执行该标签后的第一个队列函数，详见 <a href="speshow_module.html#jump">脚本跳转文档</a>。</p>
+
+<p>队列脚本的另一个重要功能是可以保存或读取执行状态，使用 SpeShow 模块的 <a href="speshow_module.html#state_saving"><code>saveState/loadState</code></a> 可以保存或读取队列脚本。</p>
 
 <p>如果一般脚本写在 <code>addCommand</code> 之外（即脚本文件的最外层的脚本），那么SpeShow会先执行完顶层的脚本，然后再执行队列脚本。因此，除非你清楚你的代码逻辑，否则一般情况下，<em>一个包含队列脚本的文件，在最外层最好不要再书写一般脚本，并需要使用 <code>goto</code> 语句来引入该文件</em>。</p>
 
