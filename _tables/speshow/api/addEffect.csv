@@ -1,0 +1,8 @@
+名称,类型,必须,默认值,描述
+type,字符串,是,无,需要使用的特效，可以为以下值或自定义特效文件：<ul><li>'Mask'（遮片）</li><li>'Gauss'（高斯模糊）</li><li>'Gray'（灰度）</li>	<li>'Mosaic'（马赛克）</li><li>'MosaicAll'（马赛克）</li><li>'Posure'</li><li>'Relievo'（浮雕）</li><li>'Average'（均衡）</li><li>'Laplace'（锐化）</li><li>'Pencil'（铅笔画）</li><li>'TextGlow'（文字外扩）</li><li>'TextStroke'（文字描边）</li><li>'TextShadow'（文字阴影）</li></ul>
+addMode,字符串,否,'Normal',特效添加方式：<ul><li>'Skip'-跳过当前特效</li><li>'Normal'-直接添加</li></ul>
+time,数字,否,0,特效变化时间，以秒为单位的浮点数。
+canSkip,布尔值,否,true,是否可以跳过。
+texture,字符串,否,无,参与特效的图片路径。
+level,数字,否,0,特效级别。
+replay,字符串,否,'Normal',回放速度类型：<ul><li>'SlowIn'/'FastOut'</li><li>'SlowOut'/'FastIn'</li><li>'SlowInOut'</li><li>'FastInOut'</li><li>'Normal'</li></ul>
