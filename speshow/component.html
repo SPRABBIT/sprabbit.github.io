@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>组件 - SpeShow 文档</title>
+	<title>UI组件 - SpeShow 文档</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="Node.js,SpeShow,SpeShow.js,galgame引擎,AVG引擎,同人游戏,同人社团,游戏引擎,Galgame,AVG,SPRABBIT,SPENGINE" />
 	<meta name="description" content="SpeShow.js是一个基于DirectX的Node.js可视化程序构建方案、AVG引擎、图文演示程序脚本引擎" />
@@ -141,7 +141,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="component.html">组件</a>
+				<a href="component.html">UI组件</a>
 				<ul class="nav">
 					<li><a href="#normal_component">基本组件</a>
 					</li>
@@ -151,9 +151,9 @@
 					</li>
 					<li><a href="#picturebox">图片框</a>
 					</li>
-					<li><a href="#scroll">滚动框（列表）</a>
-					</li>
 					<li><a href="#textbox">文字框</a>
+					</li>
+                    <li><a href="#scroll">滚动框（列表）</a>
 					</li>
 					<li><a href="#dialogbox">AVG对话框</a>
 					</li>
@@ -229,7 +229,168 @@
 				</div>
 			</div>
 			<div class="col-md-9 content-main" role="main">
-				<h2>组件</h2>
+				<h2>UI组件</h2>
+
+<p>UI组件是屏幕渲染的基本单位，类似于HTML中的DOM节点，简单地说就是一个包含图片或文字内容的矩形。一个组件可以包含多个子组件，层层嵌套，从而形成一棵组件树，整棵树的根节点就是 Screen 对象的 <code>root</code> 节点。</p>
+
+<p>UI组件是从属于屏幕的对象，一个UI组件只能渲染在对应的屏幕上，而不能插入到其他屏幕的组件树上。因此组件只能由 Screen 对象来生产：</p>
+
+<pre class="brush:js">
+    var com = screen.createComponent(opt);
+</pre>
+
+<p>其中 <code>opt</code> 为初始化参数对象，他可以包含以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>id</td><td>字符串</td><td>是</td><td>无</td><td>组件的ID，同一个屏幕中只允许存在一个该ID的组件。</td></tr><tr><td>type</td><td>字符串</td><td>否</td><td>无</td><td>UI组件的类型，若不填则为基本组件。</td></tr></table>
+
+<p>除了以上属性外，<code>opt</code> 还可以包含对应组件的可用属性初始化，不同组件的属性详见下文。</p>
+
+<hr>
+
+<h3 id="normal_component">基本组件</h3>
+
+<p>基本组件就是最简单的组件，其生产方法为将 <code>createComponent</code> 的 <code>opt</code> 参数的 <code>type</code> 属性设置为undefined或不传type：</p>
+
+<pre class="brush:js">
+    var normalCom = screen.createComponent({
+        id: '一个基本组件',
+        type: undefined
+    });
+</pre>
+
+<p>返回的 <code>normalCom</code> 对象有以下属性：</p>
+
+<table><tr><th>名称</th><th>值类型</th><th>只读</th><th>描述</th></tr><tr><td>backgroundColor</td><td>数字</td><td>否</td><td>背景颜色，用四通道十六进制数表示。</td></tr><tr><td>backgroundFillMode</td><td>字符串</td><td>否</td><td>背景图片填充模式，可以是以下值：<ul><li>'Positioning'</li><li>'Fill'</li><li>'FitWidth'</li><li>'FitHeight'</li><li>'FitMin'</li><li>'FitMax'</li></ul>默认为'Positioning'，即根据backgroundPositionMode定位。</td></tr><tr><td>backgroundImage</td><td>字符串</td><td>否</td><td>背景图片的完整路径，包括后缀。</td></tr><tr><td>backgroundPositionMode</td><td>字符串</td><td>否</td><td>背景图片位置模式，仅当background_fill_mode设置为'Positioning'时有用。可以是以下值：<ul><li>'Normal'</li><li>'TopLeft'</li><li>'TopRight'</li><li>'TopCenter'</li><li>'BottomLeft'</li><li>'BottomRight'</li><li>'BottomCenter'</li><li>'CenterLeft'</li><li>'CengerRight'</li><li>'CenterAll'</li></ul>默认为'Normal'，即根据backgroundX，backgroundY来定位。</td></tr><tr><td>backgroundX</td><td>数字</td><td>否</td><td>背景图片相对本组件左上角的水平位置。</td></tr><tr><td>backgroundY</td><td>数字</td><td>否</td><td>背景图片相对本组件左上角的垂直位置。</td></tr><tr><td>display</td><td>布尔值</td><td>否</td><td>是否显示该组件及其子组件。</td></tr><tr><td>height</td><td>数字</td><td>否</td><td>组件的高度，以像素为单位。</td></tr><tr><td>depth</td><td>数字</td><td>否</td><td>层深，为 0-255 间的数字，数字较大的层在数字较小的层前面。</td></tr><tr><td>name</td><td>字符串</td><td>否</td><td>组件的ID，同一个屏幕中只允许存在一个该ID的组件。</td></tr><tr><td>rotation</td><td>数字</td><td>否</td><td>组件绕旋转中心逆时针旋转的弧度。</td></tr><tr><td>rotationCenterX</td><td>数字</td><td>否</td><td>组件旋转中心相对父组件左上角的水平位置，以像素为单位。</td></tr><tr><td>rotationCenterY</td><td>数字</td><td>否</td><td>组件旋转中心相对父组件左上角的垂直位置，以像素为单位。</td></tr><tr><td>opacity</td><td>数字</td><td>否</td><td>透明度，可以是 0 - 1 之间的数。0 为全透。</td></tr><tr><td>width</td><td>数字</td><td>否</td><td>组件的宽度，以像素为单位。</td></tr><tr><td>x</td><td>数字</td><td>否</td><td>组件相对父组件左上角的水平位置，以像素为单位。</td></tr><tr><td>y</td><td>数字</td><td>否</td><td>组件相对父组件左上角的垂直位置，以像素为单位。</td></tr><tr><td>absolute</td><td>布尔值</td><td>否</td><td>是否以绝对模式绘制，默认为true。</td></tr><tr><td>childComponents</td><td>数组</td><td>是</td><td>储存所有子组件的数组，只读。</td></tr><tr><td>parent</td><td>组件对象</td><td>否</td><td>设置获取父亲组件。</td></tr><tr><td>onClick</td><td>函数</td><td>否</td><td>点击响应方法。</td></tr><tr><td>onDClick</td><td>函数</td><td>否</td><td>双击响应方法。</td></tr><tr><td>onMouseUp</td><td>函数</td><td>否</td><td>鼠标按键弹起响应方法。</td></tr><tr><td>onMouseDown</td><td>函数</td><td>否</td><td>鼠标按键按下响应方法。</td></tr><tr><td>onMouseScroll</td><td>函数</td><td>否</td><td>鼠标滚轮滚动响应方法。</td></tr><tr><td>onMouseOver</td><td>函数</td><td>否</td><td>鼠标停留响应方法。</td></tr><tr><td>onMouseIn</td><td>函数</td><td>否</td><td>鼠标移入响应方法。</td></tr><tr><td>onMouseOut</td><td>函数</td><td>否</td><td>鼠标移出响应方法。</td></tr><tr><td>onKeyPress</td><td>函数</td><td>否</td><td>键盘按键持续按下响应方法。</td></tr><tr><td>onKeyUp</td><td>函数</td><td>否</td><td>键盘按键弹起响应方法。</td></tr><tr><td>onKeyDown</td><td>函数</td><td>否</td><td>键盘按键按下响应方法。</td></tr><tr><td>catchClick</td><td>函数</td><td>否</td><td>点击捕获方法。</td></tr><tr><td>catchDClick</td><td>函数</td><td>否</td><td>双击捕获方法。</td></tr><tr><td>catchMouseUp</td><td>函数</td><td>否</td><td>鼠标按键弹起捕获方法。</td></tr><tr><td>catchMouseDown</td><td>函数</td><td>否</td><td>鼠标按键按下捕获方法。</td></tr><tr><td>catchMouseScroll</td><td>函数</td><td>否</td><td>鼠标滚轮滚动捕获方法。</td></tr><tr><td>catchMouseOver</td><td>函数</td><td>否</td><td>鼠标停留捕获方法。</td></tr><tr><td>catchMouseIn</td><td>函数</td><td>否</td><td>鼠标移出捕获方法。</td></tr><tr><td>catchMouseOut</td><td>函数</td><td>否</td><td>鼠标移出捕获方法。</td></tr><tr><td>catchKeyPress</td><td>函数</td><td>否</td><td>键盘按键持续按下捕获方法。</td></tr><tr><td>catchKeyUp</td><td>函数</td><td>否</td><td>键盘按键弹起捕获方法。</td></tr><tr><td>catchKeyDown</td><td>函数</td><td>否</td><td>键盘按键按下捕获方法。</td></tr></table>
+
+<p>以上这些属性若非只读属性，均可以在使用 <code>createComponent</code> 生成组件时作为 <code>opt</code> 的属性值传入，如：</p>
+
+<pre class="brush:js">
+    var normalCom = screen.createComponent({
+        id: '一个基本组件',
+        backgroundColor: 0x00ffffff,
+        onClick: function(e){
+            // 响应点击
+        }
+    });
+</pre>
+
+<p>其中以 <code>on</code> 和 <code>catch</code> 开头的属性为事件处理器，将在 <a href="event.html">事件文档</a> 详细讲解。</p>
+
+<p>除了以上属性，基本组件还包括以下方法：</p>
+
+<h4>appendChild</h4>
+
+<p><code>appendChild</code> 方法用于为组件添加一个子组件到子组件列表尾部。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    normalCom.appendChild(child);
+</pre>
+
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>child</td><td>组件对象</td><td>是</td><td>无</td><td>目标组件。</td></tr></table>
+
+<h4>removeChild</h4>
+
+<p><code>removeChild</code> 方法用于为组件删除一个子组件。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    normalCom.removeChild(child);
+</pre>
+
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>child</td><td>组件对象</td><td>是</td><td>无</td><td>目标组件。</td></tr></table>
+
+<h4>insertBefore</h4>
+
+<p><code>insertBefore</code> 方法用于插入一个子组件到另一个子组件之前。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    normalCom.insertBefore(targetChild, nextChild);
+</pre>
+
+<h5>参数</h5>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>targetChild</td><td>组件对象</td><td>是</td><td>无</td><td>需要插入的目标组件。</td></tr><tr><td>nextChild</td><td>组件对象</td><td>是</td><td>无</td><td>需要被插入到其之前的子组件。</td></tr></table>
+
+<hr>
+
+<h3 id="animation">动画</h3>
+
+<p>动画即是插值动画，即计算当前状态与目标状态的差值再除以单位时间，每单位之间改变组件的属性值，从而实现渐变动画。</p>
+
+<h4>addAnimation</h4>
+
+<p><code>addAnimation</code> 方法用于为组件添加一个插值动画，传入目标状态作为参数后，组件将产生一段动画并渐变到目标状态。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    normalCom.addAnimation(opt);
+</pre>
+
+<h5>参数</h5>
+
+<p>参数 <code>opt</code> 为目标状态对象，其可以有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>addMode</td><td>字符串</td><td>否</td><td>'Normal'</td><td>动画添加方式：<ul><li>'Merge'-覆盖当前动画</li><li>'Skip'-跳过当前动画</li><li>'Normal'-直接添加</li></ul></td></tr><tr><td>time</td><td>数字</td><td>否</td><td>0</td><td>动画持续时间，以秒为单位的浮点数。</td></tr><tr><td>replay</td><td>字符串</td><td>否</td><td>'Normal'</td><td>回放速度类型：<ul><li>'SlowIn'/'FastOut'</li><li>'SlowOut'/'FastIn'</li><li>'SlowInOut'</li><li>'FastInOut'</li><li>'Normal'</li></ul></td></tr><tr><td>canSkip</td><td>布尔值</td><td>否</td><td>true</td><td>是否可以跳过。</td></tr><tr><td>backgroundColor</td><td>数字</td><td>否</td><td>原值</td><td>目标背景颜色，用四通道十六进制数表示。</td></tr><tr><td>backgroundImage</td><td>字符串</td><td>否</td><td>原值</td><td>目标背景图片的完整路径，包括后缀。</td></tr><tr><td>backgroundX</td><td>数字</td><td>否</td><td>原值</td><td>目标背景图片相对本组件左上角的水平位置。</td></tr><tr><td>backgroundY</td><td>数字</td><td>否</td><td>原值</td><td>目标背景图片相对本组件左上角的垂直位置。</td></tr><tr><td>backgroundXDelta</td><td>数字</td><td>否</td><td>0</td><td>目标背景图片相对本组件左上角的水平位置变动。</td></tr><tr><td>backgroundYDelta</td><td>数字</td><td>否</td><td>0</td><td>目标背景图片相对本组件左上角的垂直位置变动。</td></tr><tr><td>width</td><td>数字</td><td>否</td><td>原值</td><td>组件的目标宽度，以像素为单位。</td></tr><tr><td>height</td><td>数字</td><td>否</td><td>原值</td><td>组件的目标高度，以像素为单位。</td></tr><tr><td>layer</td><td>数字</td><td>否</td><td>原值</td><td>目标层深，为 0-255 间的数字，数字较大的层在数字较小的层前面。</td></tr><tr><td>rotation</td><td>数字</td><td>否</td><td>原值</td><td>组件绕旋转中心逆时针旋转的目标弧度。</td></tr><tr><td>rotationDelta</td><td>数字</td><td>否</td><td>0</td><td>组件绕旋转中心逆时针旋转的目标弧度变动。</td></tr><tr><td>rotationCenterX</td><td>数字</td><td>否</td><td>原值</td><td>组件目标旋转中心相对父组件左上角的水平位置，以像素为单位。</td></tr><tr><td>rotationCenterXDelta</td><td>数字</td><td>否</td><td>0</td><td>组件目标旋转中心相对父组件左上角的水平位置变动，以像素为单位。</td></tr><tr><td>rotationCenterY</td><td>数字</td><td>否</td><td>原值</td><td>组件目标旋转中心相对父组件左上角的垂直位置，以像素为单位。</td></tr><tr><td>rotationCenterYDelta</td><td>数字</td><td>否</td><td>0</td><td>组件目标旋转中心相对父组件左上角的垂直位置变动，以像素为单位。</td></tr><tr><td>opacity</td><td>数字</td><td>否</td><td>原值</td><td>目标透明度，可以是 0 - 1 之间的数。0 为全透。</td></tr><tr><td>x</td><td>数字</td><td>否</td><td>原值</td><td>组件相对父组件左上角的目标水平位置，以像素为单位。</td></tr><tr><td>y</td><td>数字</td><td>否</td><td>原值</td><td>组件相对父组件左上角的目标垂直位置，以像素为单位。</td></tr><tr><td>xDelta</td><td>数字</td><td>否</td><td>0</td><td>组件相对父组件左上角的目标水平位置变动，以像素为单位。</td></tr><tr><td>yDelta</td><td>数字</td><td>否</td><td>0</td><td>组件相对父组件左上角的目标垂直位置变动，以像素为单位。</td></tr></table>
+
+<hr>
+
+<h3 id="effect">特效</h3>
+
+<p>使用特效可以为组件添加滤镜等数字图像处理效果，实际上就是基于HLSL的像素着色器。若组件包含子组件，并需要将特效覆盖到子组件上，需要将组件的 <code>absolute</code> 属性设为 <code>false</code>，否则特效只会应用到该组件上。特效支持自定义，详见 <a href="advanced.html">进阶指南</a>。</p>
+
+<h4>addEffect</h4>
+
+<p><code>addEffect</code> 方法用于为组件添加一个特效（动画），传入特效配置作为参数后，组件将产生一段动画并根据特效渐变到目标状态。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    normalCom.addEffect(opt);
+</pre>
+
+<h5>参数</h5>
+
+<p>参数 <code>opt</code> 为特效配置对象，其可以有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>type</td><td>字符串</td><td>是</td><td>无</td><td>需要使用的特效，可以为以下值或自定义特效文件：<ul><li>'Mask'（遮片）</li><li>'Gauss'（高斯模糊）</li><li>'Gray'（灰度）</li>  <li>'Mosaic'（马赛克）</li><li>'MosaicAll'（马赛克）</li><li>'Posure'</li><li>'Relievo'（浮雕）</li><li>'Average'（均衡）</li><li>'Laplace'（锐化）</li><li>'Pencil'（铅笔画）</li><li>'TextGlow'（文字外扩）</li><li>'TextStroke'（文字描边）</li><li>'TextShadow'（文字阴影）</li></ul></td></tr><tr><td>addMode</td><td>字符串</td><td>否</td><td>'Normal'</td><td>特效添加方式：<ul><li>'Skip'-跳过当前特效</li><li>'Normal'-直接添加</li></ul></td></tr><tr><td>time</td><td>数字</td><td>否</td><td>0</td><td>特效变化时间，以秒为单位的浮点数。</td></tr><tr><td>canSkip</td><td>布尔值</td><td>否</td><td>true</td><td>是否可以跳过。</td></tr><tr><td>texture</td><td>字符串</td><td>否</td><td>无</td><td>参与特效的图片路径。</td></tr><tr><td>level</td><td>数字</td><td>否</td><td>0</td><td>特效级别。</td></tr><tr><td>replay</td><td>字符串</td><td>否</td><td>'Normal'</td><td>回放速度类型：<ul><li>'SlowIn'/'FastOut'</li><li>'SlowOut'/'FastIn'</li><li>'SlowInOut'</li><li>'FastInOut'</li><li>'Normal'</li></ul></td></tr></table>
+
+<h4>clearEffect</h4>
+
+<p><code>clearEffect</code> 方法用于清除当前所有特效。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    normalCom.clearEffect();
+</pre>
+
+<h4>skip</h4>
+
+<p><code>skip</code> 方法用于跳过当前特效动画，若特效可跳过则直接设置为特效目标状态。该方法同样会跳过上面提到的插值动画。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    normalCom.skip();
+</pre>
+
+<hr>
+
+<h3 id="picturebox">其他UI组件</h3>
+
+<p>除了基本UI组件 SpeShow 还提供了其他UI组件。<em>这些UI组件都包含了基本UI组件的所有属性和方法</em>，因此以下文档中若提及属性和方法，将只描述与基本UI组件不同的部分，而省略基本UI组件自带的部分。</p>
+
+<h3 id="picturebox">图片框</h3>
 
 <p>文档待更新</p>
 

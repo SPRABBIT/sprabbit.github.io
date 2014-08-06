@@ -67,7 +67,7 @@
 	font-weight: bold;
 }
 
-.warn-old-doc a{
+.warn-old-doc a, .sidebar li.warn-old-doc>a{
 	color: #b70505;
 }
 
