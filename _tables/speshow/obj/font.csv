@@ -1,0 +1,5 @@
+名称,类型,必须,默认值,描述
+size,数字,否,20,文字大小。
+font,字符串,否,系统默认,字体名称，如'微软雅黑'（不是字体文件名）。
+weight,数字,否,'Normal',字体粗细，可以是 0 - 9 间的数值，或者对应的粗细描述字符串：<ul><li>0：'DontCare'</li><li>1：'Thin'</li><li>2：'ExtraLight' / 'UltraLight'</li><li>3：'Light'</li><li>4：'Normal' / 'Regular'</li><li>5：'Medium'</li><li>6：'SemiBold' / 'DemiBold'</li><li>7：'Bold'</li><li>8：'ExtraBold' / 'UltraBold'</li><li>9：'Heavy' / 'Black'</li></ul>
+italic,布尔值,否,false,是否为斜体字。

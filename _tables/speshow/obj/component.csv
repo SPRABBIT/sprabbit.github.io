@@ -1,8 +1,8 @@
-名称,值类型,只读,描述
+名称,类型,只读,描述
 backgroundColor,数字,否,背景颜色，用四通道十六进制数表示。
 backgroundFillMode,字符串,否,背景图片填充模式，可以是以下值：<ul><li>'Positioning'</li><li>'Fill'</li><li>'FitWidth'</li><li>'FitHeight'</li><li>'FitMin'</li><li>'FitMax'</li></ul>默认为'Positioning'，即根据backgroundPositionMode定位。
 backgroundImage,字符串,否,背景图片的完整路径，包括后缀。
-backgroundPositionMode,字符串,否,背景图片位置模式，仅当background_fill_mode设置为'Positioning'时有用。可以是以下值：<ul><li>'Normal'</li><li>'TopLeft'</li><li>'TopRight'</li><li>'TopCenter'</li><li>'BottomLeft'</li><li>'BottomRight'</li><li>'BottomCenter'</li><li>'CenterLeft'</li><li>'CengerRight'</li><li>'CenterAll'</li></ul>默认为'Normal'，即根据backgroundX，backgroundY来定位。
+backgroundPositionMode,字符串,否,背景图片位置模式，仅当backgroundFillMode设置为'Positioning'时有用。可以是以下值：<ul><li>'Normal'</li><li>'TopLeft'</li><li>'TopRight'</li><li>'TopCenter'</li><li>'BottomLeft'</li><li>'BottomRight'</li><li>'BottomCenter'</li><li>'CenterLeft'</li><li>'CengerRight'</li><li>'CenterAll'</li></ul>默认为'Normal'，即根据backgroundX，backgroundY来定位。
 backgroundX,数字,否,背景图片相对本组件左上角的水平位置。
 backgroundY,数字,否,背景图片相对本组件左上角的垂直位置。
 display,布尔值,否,是否显示该组件及其子组件。

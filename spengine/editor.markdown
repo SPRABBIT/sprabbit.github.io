@@ -11,9 +11,7 @@ title: KScript 编辑器 - SpeShow图文演示
 
 ![editor setting 0](../images/editor_setting_0.jpg)
 
-您可以选择使用包含 KScript 语法的 Notepad++ 绿色版。下载地址在[下面](#download)。
-
-您也可以选择在已安装的 Notepad++ 中直接导入 KScript 语法文件。
+您可以在已安装的 Notepad++ 中直接导入 KScript 语法文件。
 
 **********************************************************************
 
@@ -32,18 +30,6 @@ title: KScript 编辑器 - SpeShow图文演示
 导入成功后，重新启动 Notepad++，点击菜单栏中的“语言”，并在子菜单中选择 KScript 即可进行 KScript 语法高亮。
 
 ![editor setting 3](../images/editor_setting_3.jpg)
-
-**********************************************************************
-
-<h4 id="download">Notepad++ with KScript</h4>
-
-本版本的 Notepad++ 包含 KScript 语法高亮，如果您觉得以上过程比较繁琐，并且您没有安装过 Notepad++，可以下载本版。
-
-Version v6.1.8
-
-2012-09-19
-
-下载地址： [百度网盘](http://pan.baidu.com/share/link?shareid=62174&uk=872546290)
 
 **********************************************************************
 

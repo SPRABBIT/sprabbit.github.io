@@ -1,0 +1,5 @@
+名称,类型,只读,描述
+fillMode,字符串,否,图片填充模式，可以是以下值：<ul><li>'Positioning' 根据positionMode定位</li><li>'Fill' 拉伸</li><li>'FitWidth' 匹配宽度</li><li>'FitHeight' 匹配高度</li><li>'FitMin' 匹配最短边</li><li>'FitMax' 匹配最长边</li><li>'ResizeBox' 根据图片大小重置组件大小</li></ul>默认为'Positioning'。
+positionMode,字符串,否,图片位置模式，仅当fill_mode设置为'Positioning'时有用。可以是以下值：  <ul>  <li>'Normal'</li>  <li>'TopLeft'</li>  <li>'TopRight'</li> <li>'TopCenter'</li>  <li>'BottomLeft'</li>  <li>'BottomRight'</li>  <li>'BottomCenter'</li>  <li>'CenterLeft'</li>  <li>'CengerRight'</li> <li>'CenterAll'</li>  </ul>  默认为'Normal'，即根据positionX、positionY定位。
+positionX,数字,否,图片相对本组件左上角的水平位置。
+positionY,数字,否,图片相对本组件左上角的垂直位置。

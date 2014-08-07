@@ -5,6 +5,8 @@ title: 下载 SpeShow - SpeShow图文演示
 
 ##下载 SpeShow
 
+*注意：本页面为 SpeShow 0.9（ks版本）的下载页面，SpeShow 0.9 及以下版本将逐步放弃支持，请前往 [SpeShow.JS 版本的下载页面](/speshow/download.html)以下载最新版 SpeShow。*
+
 在您下载SpeShow之前，请先阅读[使用许可](license.html)。
 
 下载KScript编辑器请到[这里](editor.html)。
