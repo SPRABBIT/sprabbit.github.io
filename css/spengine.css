@@ -77,6 +77,7 @@
 
 .syntaxhighlighter{
 	padding: 10px 3px;
+    border-radius: 5px;
 }
 
 em {

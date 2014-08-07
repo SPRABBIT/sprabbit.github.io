@@ -2,4 +2,3 @@
 scrollPosition,数字,否,滚动位置，为0 - 1之间的浮点数。
 direction,字符串,否,可以是'Vertical'（垂直向下）或 'Horizontal'（水平向右）。
 maxCount,数字,否,列表最大容量。
-onBoundaryReach,函数,否,滚动边界事件响应函数，若滚动到顶部或滚动到底部则触发。

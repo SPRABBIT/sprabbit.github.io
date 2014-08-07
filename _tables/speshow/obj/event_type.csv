@@ -1,0 +1,12 @@
+类型,描述
+Click,鼠标在组件内点击时触发。
+DClick,鼠标在组件内双击时触发。
+MouseUp,鼠标按键在组件内弹起时触发。
+MouseDown,鼠标按键在组件内按下时触发。
+MouseScroll,鼠标滚轮在组件内滚动时触发。
+MouseOver,鼠标停留在组件内时触发。
+MouseIn,鼠标刚进入组件内时触发。
+MouseOut,鼠标刚离开组件时触发。
+KeyPress,键盘按键保持按下时触发。
+KeyUp,键盘按键弹起时触发。
+KeyDown,键盘按键按下时触发。
