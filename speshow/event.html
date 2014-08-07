@@ -41,7 +41,7 @@
 					</li>
 					<li><a href="/speshow/docs.html">文档</a>
 					</li>
-					<li><a href="/speshow/about.html">关于</a>
+					<li><a href="/">SPRABBIT主页</a>
 					</li>
 				</ul>
 			</div>
@@ -96,6 +96,8 @@
 					<li><a href="#jump">脚本文件引入及跳转</a>
 					</li>
 					<li><a href="#queue_func">队列函数</a>
+					</li>
+                    <li><a href="#register_font">注册字体</a>
 					</li>
 					<li><a href="#variable_type">系统变量与屏幕变量</a>
 					</li>
@@ -153,44 +155,44 @@
 					</li>
 					<li><a href="#textbox">文字框</a>
 					</li>
-                    <li><a href="#scroll">滚动框（列表）</a>
-					</li>
 					<li><a href="#dialogbox">AVG对话框</a>
+					</li>
+                    <li><a href="#scroll">滚动框（列表）</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="event.html">事件响应</a>
 				<ul class="nav">
-					<li><a href="event.html">事件传递</a>
+					<li><a href="#propagation">事件传递</a>
 					</li>
-					<li><a href="event.html">事件处理</a>
+					<li><a href="#event_handling">事件处理</a>
 					</li>
-					<li><a href="event.html">事件类型</a>
+					<li><a href="#event_type">事件类型</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="multimedia.html">多媒体</a>
 				<ul class="nav">
-					<li><a href="multimedia.html#sound">音频</a>
+					<li><a href="#sound">音频</a>
 					</li>
-					<li><a href="multimedia.html#video">视频</a>
+					<li><a href="#video">视频</a>
 					</li>
-					<li><a href="multimedia.html#sprite">精灵动画</a>
+					<li><a href="#sprite">精灵动画</a>
 					</li>
-					<li><a href="multimedia.html#particle">粒子系统</a>
+					<li><a href="#particle">粒子系统</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="advanced.html">进阶指南</a>
 				<ul class="nav">
-					<li><a href="advanced.html#customize_effect">自定义特效</a>
+					<li><a href="#customize_effect">自定义特效</a>
 					</li>
-					<li><a href="advanced.html#packing">打包资源文件</a>
+					<li><a href="#packing">打包资源文件</a>
 					</li>
-					<li><a href="advanced.html#customize_packing">修改打包加密方法</a>
+					<li><a href="#customize_packing">修改打包加密方法</a>
 					</li>
 				</ul>
 			</li>
@@ -231,7 +233,85 @@
 			<div class="col-md-9 content-main" role="main">
 				<h2>事件响应</h2>
 
-<p>文档待更新</p>
+<p>事件是在某些UI交互发生的时候所触发的信号，比如鼠标点击，键盘按键，鼠标移动等。用户可以通过设置UI组件的事件处理函数来处理这些事件带来的影响，比如当用户点击组件时让组件隐藏，只需要如下设置：</p>
+
+<pre class="brush:js">
+    // com 为一个组件对象
+    com.onClick = function(e){
+        this.display = false;
+    }
+</pre>
+
+<hr>
+
+<h3 id="propagation">事件传递</h3>
+
+<p>事件的传递分为两个过程，一个是自顶向下的下沉，另一个是自底向上的冒泡。</p>
+
+<p>事件发生时，将由 Screen 产生事件对象，然后从根组件开始往子孙组件深度优先地传递事件对象，若发现了合适的UI组件，则停止下沉，并自底向上冒泡地传递事件，直到事件对象返回根部。</p>
+
+<hr>
+
+<h3 id="event_handling">事件处理</h3>
+
+<p>事件的处理使用事件处理函数，事件处理函数为接受一个参数的函数如上面提到的：</p>
+
+<pre class="brush:js">
+    // com 为一个组件对象
+    com.onClick = function(e){
+        this.display = false;
+    }
+</pre>
+
+<p>参数 <code>e</code> 则为事件对象，他有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>只读</th><th>描述</th></tr><tr><td>key</td><td>整数</td><td>是</td><td>若事件为键盘按键相关事件，则为按键的ASCII码值。<br/>若为鼠标按键事件，则：0-左键，1-中键，2-右键。</td></tr><tr><td>absoluteX</td><td>整数</td><td>是</td><td>若事件为鼠标移动相关事件，则为鼠标相对于窗口左上角的水平位移。</td></tr><tr><td>absoluteY</td><td>整数</td><td>是</td><td>若事件为鼠标移动相关事件，则为鼠标相对于窗口左上角的垂直位移。</td></tr><tr><td>x</td><td>整数</td><td>是</td><td>若事件为鼠标移动相关事件，则为鼠标相对于组件左上角的水平位移。</td></tr><tr><td>y</td><td>整数</td><td>是</td><td>若事件为鼠标移动相关事件，则为鼠标相对于组件左上角的垂直位移。</td></tr><tr><td>movementX</td><td>整数</td><td>是</td><td>若事件为鼠标移动相关事件，则为鼠标相对于上一个鼠标事件的水平位移。</td></tr><tr><td>movementY</td><td>整数</td><td>是</td><td>若事件为鼠标移动相关事件，则为鼠标相对于上一个鼠标事件的垂直位移。<br/>若为鼠标滚轮事件，则为滚轮滚动的方向。</td></tr><tr><td>returnValue</td><td>布尔值</td><td>否</td><td>是否继续事件传递，若为 false 则终止事件传递。</td></tr></table>
+
+<p>因为事件传递有两个阶段，所以事件处理也有两个阶段，在事件下沉阶段的事件处理为事件捕获，使用以 <code>catch</code> 开头的事件处理器，如 <code>catchClick</code>：</p>
+
+<pre class="brush:js">
+    // com 为一个组件对象
+    com.catchClick = function(e){
+        // 处理事件
+    }
+</pre>
+
+<p>在事件冒泡阶段的事件处理为一般事件处理，使用以 <code>on</code> 开头的事件处理器，如 <code>onClick</code>：</p>
+
+<pre class="brush:js">
+    // com 为一个组件对象
+    com.onClick = function(e){
+        // 处理事件
+    }
+</pre>
+
+<p>终止事件传递有两种方法，第一种是直接在处器中返回 <code>false</code>：</p>
+
+<pre class="brush:js">
+    // com 为一个组件对象
+    com.onClick = function(e){
+        return false;
+    }
+</pre>
+
+<p>另一种是将事件对象的 <code>returnValue</code> 属性设为 <code>false</code>：</p>
+
+<pre class="brush:js">
+    // com 为一个组件对象
+    com.onClick = function(e){
+        e.returnValue = false;
+    }
+</pre>
+
+<hr>
+
+<h3 id="event_type">事件类型</h3>
+
+<p>事件的类型名为事件处理器 <code>on</code> 或 <code>catch</code> 后面的部分。</p>
+
+<p>各个事件的解释如下：</p>
+
+<table><tr><th>类型</th><th>描述</th></tr><tr><td>Click</td><td>鼠标在组件内点击时触发。</td></tr><tr><td>DClick</td><td>鼠标在组件内双击时触发。</td></tr><tr><td>MouseUp</td><td>鼠标按键在组件内弹起时触发。</td></tr><tr><td>MouseDown</td><td>鼠标按键在组件内按下时触发。</td></tr><tr><td>MouseScroll</td><td>鼠标滚轮在组件内滚动时触发。</td></tr><tr><td>MouseOver</td><td>鼠标停留在组件内时触发。</td></tr><tr><td>MouseIn</td><td>鼠标刚进入组件内时触发。</td></tr><tr><td>MouseOut</td><td>鼠标刚离开组件时触发。</td></tr><tr><td>KeyPress</td><td>键盘按键保持按下时触发。</td></tr><tr><td>KeyUp</td><td>键盘按键弹起时触发。</td></tr><tr><td>KeyDown</td><td>键盘按键按下时触发。</td></tr></table>
 
 <hr>
 
@@ -245,7 +325,7 @@
 
 <div id="uyan_frame"> </div>
 
-<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1589291" async=""></script>
+<script type="text/javascript" defer="defer" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1589291" async=""></script>
 
 <!-- UY END -->
 

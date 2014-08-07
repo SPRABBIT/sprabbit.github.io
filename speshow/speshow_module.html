@@ -41,7 +41,7 @@
 					</li>
 					<li><a href="/speshow/docs.html">文档</a>
 					</li>
-					<li><a href="/speshow/about.html">关于</a>
+					<li><a href="/">SPRABBIT主页</a>
 					</li>
 				</ul>
 			</div>
@@ -96,6 +96,8 @@
 					<li><a href="#jump">脚本文件引入及跳转</a>
 					</li>
 					<li><a href="#queue_func">队列函数</a>
+					</li>
+                    <li><a href="#register_font">注册字体</a>
 					</li>
 					<li><a href="#variable_type">系统变量与屏幕变量</a>
 					</li>
@@ -153,44 +155,44 @@
 					</li>
 					<li><a href="#textbox">文字框</a>
 					</li>
-                    <li><a href="#scroll">滚动框（列表）</a>
-					</li>
 					<li><a href="#dialogbox">AVG对话框</a>
+					</li>
+                    <li><a href="#scroll">滚动框（列表）</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="event.html">事件响应</a>
 				<ul class="nav">
-					<li><a href="event.html">事件传递</a>
+					<li><a href="#propagation">事件传递</a>
 					</li>
-					<li><a href="event.html">事件处理</a>
+					<li><a href="#event_handling">事件处理</a>
 					</li>
-					<li><a href="event.html">事件类型</a>
+					<li><a href="#event_type">事件类型</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="multimedia.html">多媒体</a>
 				<ul class="nav">
-					<li><a href="multimedia.html#sound">音频</a>
+					<li><a href="#sound">音频</a>
 					</li>
-					<li><a href="multimedia.html#video">视频</a>
+					<li><a href="#video">视频</a>
 					</li>
-					<li><a href="multimedia.html#sprite">精灵动画</a>
+					<li><a href="#sprite">精灵动画</a>
 					</li>
-					<li><a href="multimedia.html#particle">粒子系统</a>
+					<li><a href="#particle">粒子系统</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="advanced.html">进阶指南</a>
 				<ul class="nav">
-					<li><a href="advanced.html#customize_effect">自定义特效</a>
+					<li><a href="#customize_effect">自定义特效</a>
 					</li>
-					<li><a href="advanced.html#packing">打包资源文件</a>
+					<li><a href="#packing">打包资源文件</a>
 					</li>
-					<li><a href="advanced.html#customize_packing">修改打包加密方法</a>
+					<li><a href="#customize_packing">修改打包加密方法</a>
 					</li>
 				</ul>
 			</li>
@@ -313,6 +315,28 @@
 
 <hr>
 
+<h3 id="register_font">注册字体</h3>
+
+<p>非系统默认字体需要注册后才能被文字框组件使用，注册字体文件使用 <code>registerFont</code> 方法。</p>
+
+<h4>registerFont</h4>
+
+<p>通过接口 <code>registerFont</code> 来注册一个字体文件。</p>
+
+<h5>用法</h5>
+
+<pre class="brush:js">
+    ss.registerFont(opt);
+</pre>
+
+<h5>参数</h5>
+
+<p>其中配置对象 <code>opt</code> 可以有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>file</td><td>字符串</td><td>是</td><td>无</td><td>字体文件相对路径。</td></tr></table>
+
+<hr>
+
 <h3 id="variable_type">系统变量与屏幕变量</h3>
 
 <p>一般使用 <code>var</code> 声明的变量，在程序退出后便会丢失，如果需要持久化某些数据，则需要使用系统变量或状态变量。</p>
@@ -415,7 +439,7 @@
 
 <div id="uyan_frame"> </div>
 
-<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1589291" async=""></script>
+<script type="text/javascript" defer="defer" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1589291" async=""></script>
 
 <!-- UY END -->
 

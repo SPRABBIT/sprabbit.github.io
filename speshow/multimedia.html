@@ -41,7 +41,7 @@
 					</li>
 					<li><a href="/speshow/docs.html">文档</a>
 					</li>
-					<li><a href="/speshow/about.html">关于</a>
+					<li><a href="/">SPRABBIT主页</a>
 					</li>
 				</ul>
 			</div>
@@ -96,6 +96,8 @@
 					<li><a href="#jump">脚本文件引入及跳转</a>
 					</li>
 					<li><a href="#queue_func">队列函数</a>
+					</li>
+                    <li><a href="#register_font">注册字体</a>
 					</li>
 					<li><a href="#variable_type">系统变量与屏幕变量</a>
 					</li>
@@ -153,44 +155,44 @@
 					</li>
 					<li><a href="#textbox">文字框</a>
 					</li>
-                    <li><a href="#scroll">滚动框（列表）</a>
-					</li>
 					<li><a href="#dialogbox">AVG对话框</a>
+					</li>
+                    <li><a href="#scroll">滚动框（列表）</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="event.html">事件响应</a>
 				<ul class="nav">
-					<li><a href="event.html">事件传递</a>
+					<li><a href="#propagation">事件传递</a>
 					</li>
-					<li><a href="event.html">事件处理</a>
+					<li><a href="#event_handling">事件处理</a>
 					</li>
-					<li><a href="event.html">事件类型</a>
+					<li><a href="#event_type">事件类型</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="multimedia.html">多媒体</a>
 				<ul class="nav">
-					<li><a href="multimedia.html#sound">音频</a>
+					<li><a href="#sound">音频</a>
 					</li>
-					<li><a href="multimedia.html#video">视频</a>
+					<li><a href="#video">视频</a>
 					</li>
-					<li><a href="multimedia.html#sprite">精灵动画</a>
+					<li><a href="#sprite">精灵动画</a>
 					</li>
-					<li><a href="multimedia.html#particle">粒子系统</a>
+					<li><a href="#particle">粒子系统</a>
 					</li>
 				</ul>
 			</li>
 			<li>
 				<a href="advanced.html">进阶指南</a>
 				<ul class="nav">
-					<li><a href="advanced.html#customize_effect">自定义特效</a>
+					<li><a href="#customize_effect">自定义特效</a>
 					</li>
-					<li><a href="advanced.html#packing">打包资源文件</a>
+					<li><a href="#packing">打包资源文件</a>
 					</li>
-					<li><a href="advanced.html#customize_packing">修改打包加密方法</a>
+					<li><a href="#customize_packing">修改打包加密方法</a>
 					</li>
 				</ul>
 			</li>
@@ -231,7 +233,206 @@
 			<div class="col-md-9 content-main" role="main">
 				<h2>多媒体</h2>
 
-<p>文档待更新</p>
+<p>多媒体是指在 SpeShow 可以使用多种媒体来进行演示，比如图片、文字、视频、声音等。图片和文字在前面的 <a href="component.html">UI组件文档</a> 中已有介绍，本节将介绍其他媒体以及特殊的图片。</p>
+
+<hr>
+
+<h3 id="sound">音频</h3>
+
+<p>音频的概念很简单，创建一个音轨，然后导入音乐文件播放即可。创建音轨使用 SpeShow 对象的 <code>createTrack</code> 方法：</p>
+
+<pre class="brush:js">
+    var track = ss.createTrack({
+        id: '一个音轨',
+        volume: 1
+    });
+</pre>
+
+<p>其中配置对象可以有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>id</td><td>字符串</td><td>是</td><td>无</td><td>音轨的ID，应用中只允许存在一个该ID的音轨。</td></tr></table>
+
+<p>创建完也可以根据 <code>id</code> 来获取音轨：</p>
+
+<pre class="brush:js">
+    var track = ss.getTrackById('一个音轨');
+</pre>
+
+<p>返回的 <code>track</code> 具有以下属性，这些属性同样可以在配置对象中设置：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>只读</th><th>描述</th></tr><tr><td>mute</td><td>布尔值</td><td>否</td><td>是否静音。</td></tr><tr><td>volume</td><td>数字</td><td>否</td><td>音量，0-1。</td></tr><tr><td>loop</td><td>数字</td><td>否</td><td>循环次数，若为-1则无限循环，0则只播放一次。</td></tr><tr><td>src</td><td>字符串</td><td>否</td><td>音频文件相对路径，仅支持ogg和wav文件。</td></tr></table>
+
+<p><code>track</code> 对象还有以下方法：</p>
+
+<h4>play</h4>
+
+<p>播放或恢复暂停：</p>
+
+<pre class="brush:js">
+    track.play();
+</pre>
+
+<h4>stop</h4>
+
+<p>停止播放：</p>
+
+<pre class="brush:js">
+    track.stop();
+</pre>
+
+<h4>pause</h4>
+
+<p>暂停播放：</p>
+
+<pre class="brush:js">
+    track.pause();
+</pre>
+
+<hr>
+
+<h3 id="video">视频</h3>
+
+<p>视频的创建方法跟音频非常类似，使用 SpeShow 对象的 <code>createVideo</code> 方法：</p>
+
+<pre class="brush:js">
+    var video = ss.createVideo({
+        id: '一个视频',
+        volume: 1
+    });
+</pre>
+
+<p>其中配置对象可以有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>id</td><td>字符串</td><td>是</td><td>无</td><td>视频的ID，应用中只允许存在一个该ID的视频。</td></tr></table>
+
+<p>创建完也可以根据 <code>id</code> 来获取视频：</p>
+
+<pre class="brush:js">
+    var video = ss.getVideoById('一个视频');
+</pre>
+
+<p>返回的 <code>video</code> 具有以下属性，这些属性同样可以在配置对象中设置：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>只读</th><th>描述</th></tr><tr><td>mute</td><td>布尔值</td><td>否</td><td>是否静音。</td></tr><tr><td>volume</td><td>数字</td><td>否</td><td>音量，0-1。</td></tr><tr><td>loop</td><td>数字</td><td>否</td><td>循环次数，若为-1则无限循环，0则只播放一次。</td></tr><tr><td>src</td><td>字符串</td><td>否</td><td>视频文件相对路径，支持大多数视频文件如MP4、MOV。</td></tr></table>
+
+<p><code>video</code> 对象还有以下方法：</p>
+
+<h4>play</h4>
+
+<p>播放或恢复暂停：</p>
+
+<pre class="brush:js">
+    video.play();
+</pre>
+
+<h4>stop</h4>
+
+<p>停止播放：</p>
+
+<pre class="brush:js">
+    video.stop();
+</pre>
+
+<h4>pause</h4>
+
+<p>暂停播放：</p>
+
+<pre class="brush:js">
+    video.pause();
+</pre>
+
+<h4>视频的显示</h4>
+
+<p>虽然属性和方法与音频差不多，但是还是有一点不一样，视频一定要有UI组件作为容器，才能看到图像，否则就只能听到声音。目前支持作为视频容器的有所有UI组件的背景属性 <code>backgroundImage</code>，图片框组件的 <code>setPicture</code> 方法，AVG对话框的 <code>nextPageImage</code> 和 <code>nextLineImage</code> 属性等，设置时只需要将这些属性或参数设置为一个对象即可：</p>
+
+<pre class="brush:js">
+    com.backgroundImage = {
+        video: videoObj
+    };
+</pre>
+
+<p>其中 <code>videoObj</code> 为上面创建的视频对象。</p>
+
+<hr>
+
+<h3 id="sprite">精灵动画</h3>
+
+<p>精灵动画是一种将一个图片分成 M x N 个矩形部分逐帧播放产生的动画，可以使用精灵动画的容器跟视频一样是所有UI组件的背景属性 <code>backgroundImage</code>，图片框组件的 <code>setPicture</code> 方法，AVG对话框的 <code>nextPageImage</code> 和 <code>nextLineImage</code> 属性等，只需要传入一个精灵动画初始化对象即可：</p>
+
+<pre class="brush:js">
+    com.backgroundImage = {
+        src: 'path/img.jpg',
+        col: 2,
+        row: 3,
+        fps: 14
+    };
+</pre>
+
+<p>参数解释如下：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>必须</th><th>默认值</th><th>描述</th></tr><tr><td>src</td><td>字符串</td><td>是</td><td>无</td><td>源图像相对路径。</td></tr><tr><td>row</td><td>整数</td><td>否</td><td>1</td><td>行数。</td></tr><tr><td>col</td><td>整数</td><td>否</td><td>1</td><td>列数。</td></tr><tr><td>fps</td><td>整数</td><td>否</td><td>0</td><td>帧率。</td></tr></table>
+
+<hr>
+
+<h3 id="particle">粒子系统</h3>
+
+<p>粒子系统为复数运动规律相似的图像运动组合成的动态图画，可以用来表现下雨下雪等天气效果。创建粒子系统的方法与视频类似，使用 SpeShow 的 <code>createParticleSystem</code> 方法：</p>
+
+<pre class="brush:js">
+    var ps = ss.createParticleSystem({
+        id: '一个粒子系统'
+    });
+</pre>
+
+<p>创建完也可以根据 <code>id</code> 来获取视频：</p>
+
+<pre class="brush:js">
+    var video = ss.getParticleSystemById('一个粒子系统');
+</pre>
+
+<p>返回的粒子系统对象 <code>ps</code> 他具有以下属性：</p>
+
+<table><tr><th>名称</th><th>类型</th><th>只读</th><th>描述</th></tr><tr><td>tex</td><td>字符串</td><td>否</td><td>粒子图路径或其他图像容器。</td></tr><tr><td>width</td><td>数字</td><td>否</td><td>粒子系统宽度（像素）。</td></tr><tr><td>height</td><td>数字</td><td>否</td><td>粒子系统高度（像素）。</td></tr><tr><td>bornXMin</td><td>数字</td><td>否</td><td>粒子产生的最小横坐标。</td></tr><tr><td>bornXMax</td><td>数字</td><td>否</td><td>粒子产生的最大横坐标。</td></tr><tr><td>bornYMin</td><td>数字</td><td>否</td><td>粒子产生的最小纵坐标。</td></tr><tr><td>bornYMax</td><td>数字</td><td>否</td><td>粒子产生的最大纵坐标。</td></tr><tr><td>liveXMin</td><td>数字</td><td>否</td><td>粒子活动的最小横坐标。</td></tr><tr><td>liveXMax</td><td>数字</td><td>否</td><td>粒子活动的最大横坐标。</td></tr><tr><td>liveYMin</td><td>数字</td><td>否</td><td>粒子活动的最小纵坐标。</td></tr><tr><td>liveYMax</td><td>数字</td><td>否</td><td>粒子活动的最大纵坐标。</td></tr><tr><td>color</td><td>十六进制数</td><td>否</td><td>粒子的颜色（正片叠底）。</td></tr><tr><td>backgroundColor</td><td>十六进制数</td><td>否</td><td>粒子系统的底色。</td></tr><tr><td>countMax</td><td>数字</td><td>否</td><td>粒子数量上限。</td></tr><tr><td>liveTime</td><td>数字</td><td>否</td><td>粒子存活时间（秒）。</td></tr><tr><td>fadeTime</td><td>数字</td><td>否</td><td>粒子渐出时间（秒）。</td></tr><tr><td>shootRate</td><td>数字</td><td>否</td><td>粒子发射频率（个/秒）。</td></tr><tr><td>shootVelocityMin</td><td>数字</td><td>否</td><td>粒子发射的最小速率（像素/秒）。</td></tr><tr><td>shootVelocityMax</td><td>数字</td><td>否</td><td>粒子发射的最大速率（像素/秒）。</td></tr><tr><td>shootAngleMin</td><td>数字</td><td>否</td><td>粒子发射的最小角度（弧度）。</td></tr><tr><td>shootAngleMax</td><td>数字</td><td>否</td><td>粒子发射的最大角度（弧度）。</td></tr><tr><td>accelerationX</td><td>数字</td><td>否</td><td>粒子系统水平加速度（像素/平方秒）。</td></tr><tr><td>accelerationY</td><td>数字</td><td>否</td><td>粒子系统竖直加速度（像素/平方秒）。</td></tr><tr><td>scaleMin</td><td>数字</td><td>否</td><td>粒子最小缩放率。</td></tr><tr><td>scaleMax</td><td>数字</td><td>否</td><td>粒子最大缩放率。</td></tr><tr><td>scaleRateMin</td><td>数字</td><td>否</td><td>粒子最小缩放频率（缩放率/秒）。</td></tr><tr><td>scaleRateMax</td><td>数字</td><td>否</td><td>粒子最大缩放频率（缩放率/秒）。</td></tr><tr><td>specialRotation</td><td>布尔值</td><td>否</td><td>是否开启特殊旋转功能。<br/>开启后，粒子发射前将旋转到与发射速度一致（类似于弹幕发射）。</td></tr><tr><td>rotationMin</td><td>数字</td><td>否</td><td>粒子图的初始最小旋转角（弧度）。</td></tr><tr><td>rotationMax</td><td>数字</td><td>否</td><td>粒子图的初始最大旋转角（弧度）。</td></tr><tr><td>rotateRateMin</td><td>数字</td><td>否</td><td>粒子发射后的最小旋转率（弧度/秒）。<br/>若开启特殊旋转，粒子将至少以该速度绕发射速度方向旋转。</td></tr><tr><td>rotateRateMax</td><td>数字</td><td>否</td><td>粒子发射后的最大旋转率（弧度/秒）。<br/>若开启特殊旋转，粒子将至多以该速度绕发射速度方向旋转。</td></tr></table>
+
+<p>其中配置对象的属性也可以 <code>ps</code> 对象的属性。</p>
+
+<p><code>ps</code> 对象还有以下方法：</p>
+
+<h4>play</h4>
+
+<p>播放或恢复暂停：</p>
+
+<pre class="brush:js">
+    ps.play();
+</pre>
+
+<h4>stop</h4>
+
+<p>停止播放：</p>
+
+<pre class="brush:js">
+    ps.stop();
+</pre>
+
+<h4>pause</h4>
+
+<p>暂停播放：</p>
+
+<pre class="brush:js">
+    ps.pause();
+</pre>
+
+<h4>粒子系统的显示</h4>
+
+<p>和视频一样，粒子系统一定要有UI组件作为容器，才能看到图像。目前支持作为容器的有所有UI组件的背景属性 <code>backgroundImage</code>，图片框组件的 <code>setPicture</code> 方法，AVG对话框的 <code>nextPageImage</code> 和 <code>nextLineImage</code> 属性等，设置时只需要将这些属性或参数设置为一个对象即可：</p>
+
+<pre class="brush:js">
+    com.backgroundImage = {
+        particleSystem: ps
+    };
+</pre>
+
+<p>其中 <code>ps</code> 为上面创建的粒子系统对象。</p>
 
 <hr>
 
@@ -245,7 +446,7 @@
 
 <div id="uyan_frame"> </div>
 
-<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1589291" async=""></script>
+<script type="text/javascript" defer="defer" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1589291" async=""></script>
 
 <!-- UY END -->
 
