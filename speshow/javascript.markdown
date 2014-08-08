@@ -16,6 +16,8 @@ JavaScript 是一种广泛应用于Web前后端的编程语言，SpeShow 0.11 �
  
 如果你对JavaScript不熟悉，建议到 [W3School](http://www.w3school.com.cn) 查看 [JavaScript / EcmaScript 相关语法教程](http://www.w3school.com.cn/js/index_pro.asp) 即可。
 
+********************************************************************
+
 <h3 id="node.js">Node.js</h3>
 
 [Node.js](http://www.nodejs.org) 是一个可以快速构建网络服务及应用的平台。它对Google V8引擎进行了封装，使得 JavaScript 得以走出浏览器，成为一种前后端通用的编程语言。现在，无论是前端开发设计人员，或是后端逻辑数据开发人员都已离不开 Node.js，也因此有了一大批基于 Node.js 的模块及应用。
@@ -23,6 +25,8 @@ JavaScript 是一种广泛应用于Web前后端的编程语言，SpeShow 0.11 �
 基于这样一个平台，也便于 SpeShow 获取他的优势，让开发更加自由，让开发者可以开发出更加多功能，更加强大的桌面图文演示类应用。
 
 如果你对Node.js不熟悉，也可以继续使用SpeShow，只有到你需要自己编写模块，或者需要调用一些系统模块时，需要参考一下 [Node.js的模块教程](http://www.w3cschool.cc/nodejs/nodejs-module-system.html)，完整教程也可以直接当 [W3CSchool.cc](http://www.w3cschool.cc/nodejs/nodejs-tutorial.html)查看
+
+********************************************************************
 
 <h3 id="speshow_mod">SpeShow 模块</h3>
 
