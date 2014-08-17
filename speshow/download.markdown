@@ -23,9 +23,21 @@ title: 下载 SpeShow - SpeShow图文演示
 
 当前发行的版本罗列如下：
 
- - 2014-08-03 [SpeShow v0.11.0 Beta](#speshow_v_0.11.0) *NEW*
+ - 2014-08-17 [SpeShow v0.11.1 Beta](#speshow_v_0.11.1) *NEW*
+ - 2014-08-03 [SpeShow v0.11.0 Beta](#speshow_v_0.11.0)
  
 更多早期版本请[查看KS版本下载](/spengine/download.html)。
+
+*****************************************************************************
+
+<h3 id="speshow_v_0.11.1">Version 0.11.1 Beta</h3>
+
+本版较上一版本修复了一些Bug，文档是基于本版本，但仍为不稳定版本，您在使用过程中可能会遇到一些Bug。请您将Bug出现的情形记录下来，并到[SPRABBIT论坛的SpeShow板块](http://bbs.sprabbit.com/categories/speshow)中反映，或通过各种[联系方式联系我们](http://blog.sprabbit.com/about/)，我们会为您找到一个解决办法，并在以后的版本中修复此Bug。
+
+下载：
+
+ - SpeShow 0.11.1：[百度网盘](http://pan.baidu.com/s/1mg7L03A)
+ - SpeShow 0.11.1 及示例（Sicily 序章）: [百度网盘](http://pan.baidu.com/s/1kT830oR)
 
 *****************************************************************************
 
@@ -38,7 +50,6 @@ title: 下载 SpeShow - SpeShow图文演示
 下载：
 
  - SpeShow 0.11.0：[GitHub](https://github.com/denjones/spengine/releases/download/v0.11.0/SpeShow.0.11.zip) [百度网盘](http://pan.baidu.com/s/1bnaT0kf)
- - SpeShow 0.11.0 以及示例（《Sicily 序章》 ）：暂未开放
 
 ***********************************************************************
 
