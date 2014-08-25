@@ -2,378 +2,394 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://www.sprabbit.com/jekyll/update/2013/08/17/welcome-to-jekyll.html</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/cg.html</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/character.html</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/download.html</loc>
+<<<<<<< HEAD
         <lastmod>2014-08-25T10:09:27+08:00</lastmod>
+=======
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
+>>>>>>> aac11bff62ee15fe3a5a07d986cd5f9e6bee2455
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/music.html</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/staff.html</loc>
-        <lastmod>2014-07-31T17:54:43+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/stop.html</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/sicily/story.html</loc>
-        <lastmod>2014-07-26T17:01:44+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/authors.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/donate.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/download.html</loc>
-        <lastmod>2014-08-07T15:22:09+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/editor.html</loc>
-        <lastmod>2014-08-07T15:19:17+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/forum.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/license.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/pack_guider.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/QA.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/show.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/spengine.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/speshow_another.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_1.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_2.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_3.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_4.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_5.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_6.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_7.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_8.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_animation.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_capture.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_dialogbox.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_effect.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_particlesystem.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_save.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_skip.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_sound.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_switch.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_texteffect.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_advanced_video.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_commands.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_deploy.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_branch.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_comment.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_function.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_include.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_loop.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_operation.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_relationship.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_kscript_variable.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_professioinal.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_professional.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_sample.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_senior.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_senior_inner.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_senior_jump.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_senior_listener.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_senior_pre.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_component.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_exit.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_list.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_picturebox.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_sample.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_screen.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_textbox.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/tutorial_standard_wait.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/spengine/why_speshow.html</loc>
-        <lastmod>2014-08-01T13:29:05+08:00</lastmod>
+        <lastmod>2014-08-03T08:35:36+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/advanced.html</loc>
-        <lastmod>2014-08-07T21:23:16+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/component.html</loc>
-        <lastmod>2014-08-07T19:21:38+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/deployment.html</loc>
-        <lastmod>2014-08-08T20:13:36+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/docs.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/donate.html</loc>
-        <lastmod>2014-08-08T21:46:18+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/download.html</loc>
+<<<<<<< HEAD
         <lastmod>2014-08-18T09:10:20+08:00</lastmod>
+=======
+        <lastmod>2014-08-18T00:19:25+08:00</lastmod>
+>>>>>>> aac11bff62ee15fe3a5a07d986cd5f9e6bee2455
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/editor.html</loc>
-        <lastmod>2014-08-08T21:40:58+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/event.html</loc>
-        <lastmod>2014-08-09T22:31:42+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/FAQ.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/javascript.html</loc>
-        <lastmod>2014-08-08T20:14:00+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/license.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/multimedia.html</loc>
-        <lastmod>2014-08-07T21:17:31+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/pack_guider.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/quick_start.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/reference.html</loc>
-        <lastmod>2014-08-08T20:58:36+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/sample.html</loc>
+<<<<<<< HEAD
         <lastmod>2014-08-18T09:10:20+08:00</lastmod>
+=======
+        <lastmod>2014-08-18T00:39:24+08:00</lastmod>
+>>>>>>> aac11bff62ee15fe3a5a07d986cd5f9e6bee2455
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/screen.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/script_type.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/show.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/speshow_module.html</loc>
+<<<<<<< HEAD
         <lastmod>2014-08-10T11:12:45+08:00</lastmod>
+=======
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
+>>>>>>> aac11bff62ee15fe3a5a07d986cd5f9e6bee2455
     </url>
     <url>
         <loc>http://www.sprabbit.com/speshow/window.html</loc>
-        <lastmod>2014-08-07T15:24:14+08:00</lastmod>
+        <lastmod>2014-08-17T23:45:48+08:00</lastmod>
     </url>
 </urlset>
